@@ -1,0 +1,6 @@
+Excel,pandas
+Worksheet,Dataframe
+Column,Series
+Row heading,Index
+Row,Row
+Empty cell,NaN
