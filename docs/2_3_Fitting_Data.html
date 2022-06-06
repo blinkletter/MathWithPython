@@ -1,0 +1,859 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SciPy and Fitting Data &#8212; Python and Chemistry</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Python vs. Microsoft Excel" href="S1_Python_Instead_of_Excel.html" />
+    <link rel="prev" title="Pandas and Plotting Data" href="2_2_Plotting_Data.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Python and Chemistry</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="start.html">
+   Table of Contents
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Basic Skills
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_1_Calculator.html">
+   Basic Math with Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_2_Simple_Plots.html">
+   Making Plots Using Python
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Interpretting Data
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_1_Better_Plots.html">
+   Making Better Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_2_Plotting_Data.html">
+   Pandas and Plotting Data
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   SciPy and Fitting Data
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  More Skills
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="S1_Python_Instead_of_Excel.html">
+   Python vs. Microsoft Excel
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="S2_Styling_Plots.html">
+   Styling Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="S3_Solving_Equations.html">
+   Solving Equations with SymPy
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="E1_The_ICE_Table_in_Python.html">
+   The ICE Table in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="E2_Plotting_Reaction_Kinetics_to_Determine_Order.html">
+   Plotting Reaction Kinetics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="E3_Order_of_Reaction_via_Python.html">
+   Order of Reaction via Python
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/2_3_Fitting_Data.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/blinkletter/MathWithPython"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/blinkletter/MathWithPython/issues/new?title=Issue%20on%20page%20%2F2_3_Fitting_Data.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/blinkletter/MathWithPython/master?urlpath=tree/docs/2_3_Fitting_Data.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-tools">
+   The Tools
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#your-data">
+   Your Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plot-the-data">
+   Plot The Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#propose-a-model">
+   Propose a Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linearizing-the-equation">
+   Linearizing the Equation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fit-the-line">
+   Fit the Line
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fit-the-line-with-linear-regression">
+   Fit the Line with Linear Regression
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fit-the-curve">
+   Fit the Curve
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#smoothing-the-curve">
+   Smoothing the Curve
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-residuals">
+   Plotting Residuals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-we-have-accomplished">
+     What We Have Accomplished
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-look-ahead">
+     A Look Ahead
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resources">
+   Resources
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>SciPy and Fitting Data</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-tools">
+   The Tools
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#your-data">
+   Your Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plot-the-data">
+   Plot The Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#propose-a-model">
+   Propose a Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linearizing-the-equation">
+   Linearizing the Equation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fit-the-line">
+   Fit the Line
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fit-the-line-with-linear-regression">
+   Fit the Line with Linear Regression
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fit-the-curve">
+   Fit the Curve
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#smoothing-the-curve">
+   Smoothing the Curve
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-residuals">
+   Plotting Residuals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-we-have-accomplished">
+     What We Have Accomplished
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-look-ahead">
+     A Look Ahead
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resources">
+   Resources
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="scipy-and-fitting-data">
+<h1>SciPy and Fitting Data<a class="headerlink" href="#scipy-and-fitting-data" title="Permalink to this headline">¶</a></h1>
+<p>We have plotted functions and plotted experimental data. How can we use both of these skills to <strong>interpret the results</strong> of our experiment? We could try plotting a function on the same plot as our data and changing the parameters of the function until it tracked closely to the data. This is called “<strong>optimization</strong>”. We could try to optimize the fit by eye, but there is a better way.</p>
+<p>We can use a computer to do all that work for us. There are many tools available. In this course we will use the tools contained in the <strong>SciPy</strong> library. This library provides tools for <strong>scientific computing</strong> and we will only use a small subset of its capabilities.</p>
+<div class="section" id="the-tools">
+<h2>The Tools<a class="headerlink" href="#the-tools" title="Permalink to this headline">¶</a></h2>
+<p>As always, we must begin by importing the <strong>tools</strong> that we will be using.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.optimize</span> <span class="k">as</span> <span class="nn">opt</span>      <span class="c1"># we will load the optimize sublibrary from scipy</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>       <span class="c1"># we will load the stats sublibrary from scipy</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>                <span class="c1"># A library of math functions and data structure</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>               <span class="c1"># The dataframe and related methods and function.</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>   <span class="c1"># A library of plotting functions</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="your-data">
+<h2>Your Data<a class="headerlink" href="#your-data" title="Permalink to this headline">¶</a></h2>
+<p>As before, we will create a data set. Here we <strong>load the data</strong> from a text file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read a data file. It should be in the same directory as this notebook</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Here is data read in from the data file as a data frame object&quot;</span><span class="p">)</span>
+<span class="n">xydata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;2_3_Data.txt&quot;</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">xydata</span><span class="p">)</span>                <span class="c1"># Print the data </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Here is data read in from the data file as a data frame object
+   Days  Zombies
+0     0     1.00
+1     2     1.75
+2     7     8.13
+3    14    71.10
+4    17   165.00
+5    19   306.00
+6    21   521.00
+7    22   744.00
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plot-the-data">
+<h2>Plot The Data<a class="headerlink" href="#plot-the-data" title="Permalink to this headline">¶</a></h2>
+<p>First we will <strong>plot the data</strong>. It looks like exponential growth. Do you agree?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xydata</span><span class="p">[</span><span class="s2">&quot;Days&quot;</span><span class="p">],</span> <span class="n">xydata</span><span class="p">[</span><span class="s2">&quot;Zombies&quot;</span><span class="p">],</span> <span class="s2">&quot;kx&quot;</span><span class="p">)</span>   <span class="c1"># &quot;k&quot; = black, &quot;x&quot; = cross </span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Plotting a Zombie Apocalypse&quot;</span><span class="p">)</span>           <span class="c1"># Title of the plot         </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Days&quot;</span><span class="p">)</span>                                  <span class="c1"># x-axis label   </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Increase in Zombies&quot;</span><span class="p">)</span>                   <span class="c1"># y-axis label  </span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">800</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">25</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>                                          <span class="c1"># show the plot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2_3_Fitting_Data_5_0.png" src="_images/2_3_Fitting_Data_5_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="propose-a-model">
+<h2>Propose a Model<a class="headerlink" href="#propose-a-model" title="Permalink to this headline">¶</a></h2>
+<p>Are we doomed? First we must understand the data by <strong>fitting it to a model</strong>. This looks like exponential growth (we know that living things follow this model when resources are unlimited) so let us model that hypothesis and see if it is a good fit. The formula for exponential growth of a disease is…</p>
+<div class="math notranslate nohighlight">
+\[\frac{Z_t}{Z_0}=e^{(r-1)t}\]</div>
+<p><span class="math notranslate nohighlight">\(\frac{Z_t}{Z_0} =\)</span> relative increase in zombie population <br>
+<span class="math notranslate nohighlight">\(r =\)</span> replication factor (r = 1 means balanced zombie production/destruction)<br>
+<span class="math notranslate nohighlight">\(t =\)</span> time</p>
+</div>
+<div class="section" id="linearizing-the-equation">
+<h2>Linearizing the Equation<a class="headerlink" href="#linearizing-the-equation" title="Permalink to this headline">¶</a></h2>
+<p>Most simple equations can be <strong>converted to a linear form</strong>. We can log both sides to get the following linear equation.</p>
+<div class="math notranslate nohighlight">
+\[\ln\left(\frac{Z_t}{Z_0}\right)=(r-1)\cdot t \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xydata</span><span class="p">[</span><span class="s2">&quot;LogZ&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">xydata</span><span class="p">[</span><span class="s2">&quot;Zombies&quot;</span><span class="p">])</span>     <span class="c1"># np.log is &quot;ln&quot;; np.log10 is &quot;log&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">xydata</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xydata</span><span class="p">[</span><span class="s2">&quot;Days&quot;</span><span class="p">],</span> <span class="n">xydata</span><span class="p">[</span><span class="s2">&quot;LogZ&quot;</span><span class="p">],</span> <span class="s2">&quot;ko&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   Days  Zombies      LogZ
+0     0     1.00  0.000000
+1     2     1.75  0.559616
+2     7     8.13  2.095561
+3    14    71.10  4.264087
+4    17   165.00  5.105945
+5    19   306.00  5.723585
+6    21   521.00  6.255750
+7    22   744.00  6.612041
+</pre></div>
+</div>
+<img alt="_images/2_3_Fitting_Data_7_1.png" src="_images/2_3_Fitting_Data_7_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="fit-the-line">
+<h2>Fit the Line<a class="headerlink" href="#fit-the-line" title="Permalink to this headline">¶</a></h2>
+<p>We can then use the statistical tools in SciPy to perform a <strong>curve fit</strong> optimization. We will construct a line based on the parameters of the line fit and display it on the same plot as the data. <strong>Does it fit</strong>? We can also report <strong>statistical parameters</strong> based on the line fit to help us with that decision. We will not use any statistics other than the parameters for the fit itself in this example. Consider the following code and determine what each command accomplishes. Did the linearized data fit the <strong>linear function</strong>?</p>
+<p><strong>Note</strong>: The <code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit()</span></code> function returns a list that contains a list of parameters and a matrix for the covariance. The coefficients will follow the order that they are defined in the function used for the fit. See the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html">documentation</a> for more information.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">linear</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>      <span class="c1"># Define a linear function</span>
+    <span class="k">return</span> <span class="n">m</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">b</span>
+    
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">xydata</span><span class="p">[</span><span class="s2">&quot;Days&quot;</span><span class="p">],</span> <span class="n">xydata</span><span class="p">[</span><span class="s2">&quot;LogZ&quot;</span><span class="p">]</span>
+    
+<span class="p">[</span><span class="n">slope</span><span class="p">,</span><span class="n">intercept</span><span class="p">],</span> <span class="n">covariance</span> <span class="o">=</span> <span class="n">opt</span><span class="o">.</span><span class="n">curve_fit</span><span class="p">(</span><span class="n">linear</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> 
+     
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;ko&quot;</span><span class="p">)</span>   <span class="c1"># plot the linear data</span>
+
+<span class="n">y_calc</span> <span class="o">=</span> <span class="n">linear</span><span class="p">(</span><span class="n">x</span> <span class="p">,</span><span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span><span class="p">)</span>   <span class="c1"># calculate y-values based on the curve fit parameters</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span> <span class="p">,</span><span class="n">y_calc</span><span class="p">,</span> <span class="s2">&quot;k-&quot;</span><span class="p">)</span>             <span class="c1"># plot the line for the curve fit parameters</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Linear Curve Fit&quot;</span><span class="p">)</span>            <span class="c1"># Title of the plot         </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Days&quot;</span><span class="p">)</span>                       <span class="c1"># x-axis label   </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;ln(Increase)&quot;</span><span class="p">)</span>               <span class="c1"># y-axis label  </span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># the square root of the diagonization of the covariance matrix will give the stdev for the parameters</span>
+<span class="c1"># recall your linear algebra and statistics courses, or just trust me.</span>
+<span class="p">[</span><span class="n">stdev_slope</span><span class="p">,</span> <span class="n">stdev_int</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">covariance</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The slope (r-1) is </span><span class="si">{:.3f}</span><span class="s2"> +/- </span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">slope</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">stdev_slope</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Therefore the r value is </span><span class="si">{:.3f}</span><span class="s2"> +/- </span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">slope</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">stdev_slope</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The intercept is </span><span class="si">{:.3f}</span><span class="s2"> +/- </span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">intercept</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">stdev_int</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2_3_Fitting_Data_9_0.png" src="_images/2_3_Fitting_Data_9_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The slope (r-1) is 0.301 +/- 0.0032
+Therefore the r value is 1.301 +/- 0.0032
+The intercept is -0.009 +/- 0.048
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="fit-the-line-with-linear-regression">
+<h2>Fit the Line with Linear Regression<a class="headerlink" href="#fit-the-line-with-linear-regression" title="Permalink to this headline">¶</a></h2>
+<p>In the above code we used the <code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit()</span></code> function to <strong>fit</strong> an arbitrary function to data. This is a <strong>general-purpose</strong> method and works with any function. You may be familiar with Microsoft Excel and the need to fit <strong>linear data</strong> (unless you want to bother with the solver system of Excel). Excel uses a <strong>linear regression</strong> method. It is exactly the same as a <strong>curve fit</strong> but assumes that the function is always a linear <span class="math notranslate nohighlight">\(y = mx + b\)</span> system.</p>
+<p><strong>SciPy</strong> has the same linear regression function. We can use the <code class="docutils literal notranslate"><span class="pre">scipy.stats.linregress()</span></code> function. We send it the x,y data and it returns an <strong>object</strong> that contains all the results, including standard <strong>statistical information</strong>. Consider the code below and examine the purpose of each command.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">xydata</span><span class="p">[</span><span class="s2">&quot;Days&quot;</span><span class="p">],</span> <span class="n">xydata</span><span class="p">[</span><span class="s2">&quot;LogZ&quot;</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;ko&quot;</span><span class="p">)</span>                           <span class="c1"># plot the data</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Linear Curve Fit&quot;</span><span class="p">)</span>                  <span class="c1"># Title of the plot         </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Days&quot;</span><span class="p">)</span>                             <span class="c1"># x-axis label   </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;ln(Increase)&quot;</span><span class="p">)</span>                     <span class="c1"># y-axis label  </span>
+
+<span class="n">fit</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">linregress</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>                   <span class="c1"># use linear regression to fit the data</span>
+
+<span class="n">y_calc</span> <span class="o">=</span> <span class="n">linear</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">fit</span><span class="o">.</span><span class="n">slope</span><span class="p">,</span> <span class="n">fit</span><span class="o">.</span><span class="n">intercept</span><span class="p">)</span>   <span class="c1"># calculate y-values based on the curve fit parameters</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_calc</span><span class="p">,</span> <span class="s2">&quot;k-&quot;</span><span class="p">)</span>                      <span class="c1"># plot the line for the curve fit parameters</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  
+
+<span class="c1"># print out the statistical information available from the linregress function</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Slope = </span><span class="si">{:.2f}</span><span class="s2"> +/- </span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fit</span><span class="o">.</span><span class="n">slope</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">fit</span><span class="o">.</span><span class="n">stderr</span><span class="p">))</span>          
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Intercept = </span><span class="si">{:.2f}</span><span class="s2"> +/- </span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fit</span><span class="o">.</span><span class="n">intercept</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">fit</span><span class="o">.</span><span class="n">intercept_stderr</span><span class="p">))</span>   
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RSQ = </span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fit</span><span class="o">.</span><span class="n">rvalue</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2_3_Fitting_Data_11_0.png" src="_images/2_3_Fitting_Data_11_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Slope = 0.30 +/- 0.0032
+Intercept = -0.01 +/- 0.0482
+RSQ = 1.000
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="fit-the-curve">
+<h2>Fit the Curve<a class="headerlink" href="#fit-the-curve" title="Permalink to this headline">¶</a></h2>
+<p>Linear fits are so “Excel”. We can <strong>fit the curve</strong> function itself without needing to linearize the data.  This is more broadly applicable. However, I do recommend linearizing where possible because a subtle curve in what is supposed to be a straight line <strong>stands out</strong> to our human brains. We would see clearly that, even though the fit is close, the model is wrong. We would not pick up that slight difference in fitting a curve (is it slightly too curved?) and would need to use statistical analysis to detect such a <strong>deviation from the model</strong> (such as plotting the residuals - which you should always do, even with linear plots.)</p>
+<p>All we have to do is use the <strong>exact same</strong> code block as above but with a different function. That is the power of these notebooks. <strong>Cut and paste</strong> is a useful tool here.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">curve</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">r</span><span class="p">):</span>      <span class="c1"># Define a linear function</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="n">r</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+ 
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">xydata</span><span class="p">[</span><span class="s2">&quot;Days&quot;</span><span class="p">],</span> <span class="n">xydata</span><span class="p">[</span><span class="s2">&quot;Zombies&quot;</span><span class="p">]</span>    
+
+<span class="p">[</span><span class="n">r</span><span class="p">],</span> <span class="n">covariance</span> <span class="o">=</span> <span class="n">opt</span><span class="o">.</span><span class="n">curve_fit</span><span class="p">(</span><span class="n">curve</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> 
+     
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;ko&quot;</span><span class="p">)</span>                     <span class="c1"># plot the linear data</span>
+
+<span class="n">y_calc</span> <span class="o">=</span> <span class="n">curve</span><span class="p">(</span><span class="n">x</span> <span class="p">,</span><span class="n">r</span><span class="p">)</span>                     <span class="c1"># calculate y-values based on the curve fit parameters</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span> <span class="p">,</span><span class="n">y_calc</span><span class="p">,</span> <span class="s2">&quot;k-&quot;</span><span class="p">)</span>                <span class="c1"># plot the line for the curve fit parameters</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Nonlinear Curve Fit&quot;</span><span class="p">)</span>         <span class="c1"># Title of the plot         </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Days&quot;</span><span class="p">)</span>                       <span class="c1"># x-axis label   </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;ln(Increase)&quot;</span><span class="p">)</span>               <span class="c1"># y-axis label  </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The replication factor, r, is&quot;</span><span class="p">,</span><span class="n">r</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2_3_Fitting_Data_13_0.png" src="_images/2_3_Fitting_Data_13_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The replication factor, r, is 1.2998190918436157
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="smoothing-the-curve">
+<h2>Smoothing the Curve<a class="headerlink" href="#smoothing-the-curve" title="Permalink to this headline">¶</a></h2>
+<p>Observe above that the curve is a <strong>series of straight lines</strong> connecting the data points calculated at the given values of the x-axis. To make a <strong>smooth curve</strong>, we should use many more points. We will make a set of x-values with 100 evenly spaced values between the minimum and miximum values of the data x-axis. Consider the following clode block and try to understand what each command does.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">curve</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">r</span><span class="p">):</span>                             <span class="c1"># Define a linear function</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="n">r</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+    
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">xydata</span><span class="p">[</span><span class="s2">&quot;Days&quot;</span><span class="p">],</span> <span class="n">xydata</span><span class="p">[</span><span class="s2">&quot;Zombies&quot;</span><span class="p">]</span>    
+
+<span class="p">[</span><span class="n">r</span><span class="p">],</span> <span class="n">covariance</span> <span class="o">=</span> <span class="n">opt</span><span class="o">.</span><span class="n">curve_fit</span><span class="p">(</span><span class="n">curve</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> 
+     
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;ko&quot;</span><span class="p">)</span>                        <span class="c1"># plot the linearized data</span>
+
+<span class="n">min_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>                           <span class="c1"># get a starting value for the x_list</span>
+<span class="n">max_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>                           <span class="c1"># get the ending value for the x_list</span>
+<span class="n">xlist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">min_x</span><span class="p">,</span><span class="n">max_x</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>        <span class="c1"># create an x-axis with many closely spaced values</span>
+<span class="n">ylist</span> <span class="o">=</span> <span class="n">curve</span><span class="p">(</span><span class="n">xlist</span><span class="p">,</span><span class="n">r</span><span class="p">)</span>                      <span class="c1"># calculate y-values based on the curve fit parameters</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xlist</span><span class="p">,</span> <span class="n">ylist</span><span class="p">,</span> <span class="s2">&quot;k-&quot;</span><span class="p">)</span>                <span class="c1"># plot the smoother line for the curve fit parameters</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Nonlinear Curve Fit&quot;</span><span class="p">)</span>            <span class="c1"># Title of the plot         </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Days&quot;</span><span class="p">)</span>                          <span class="c1"># x-axis label   </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;ln(Increase)&quot;</span><span class="p">)</span>                  <span class="c1"># y-axis label  </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># the square root of the diagonization of the covariance matrix will give the stdev for the parameters</span>
+<span class="p">[</span><span class="n">stdev_r</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">covariance</span><span class="p">))</span>
+
+<span class="c1"># Calculate the square of the correlation for the line fit, R^2</span>
+<span class="n">corr_matrix</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_calc</span><span class="p">))</span>  
+<span class="n">R</span> <span class="o">=</span> <span class="n">corr_matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">RSQ</span> <span class="o">=</span> <span class="n">R</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="c1"># print out the statistical information calculated for this data</span>
+<span class="c1"># note the use of the str.format() method to format the numeric data within the text strings</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The replication factor, r, is </span><span class="si">{:.3f}</span><span class="s2"> +/- </span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">stdev_r</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RSQ = </span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">RSQ</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2_3_Fitting_Data_15_0.png" src="_images/2_3_Fitting_Data_15_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The replication factor, r, is 1.300 +/- 0.001
+RSQ = 0.9987
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plotting-residuals">
+<h2>Plotting Residuals<a class="headerlink" href="#plotting-residuals" title="Permalink to this headline">¶</a></h2>
+<p>We can <strong>check the model</strong> by plotting the <strong>residuals</strong>. this is the difference between the experimental y-axis and the calculated y-axis from the fit to the model. <strong>Random error</strong> will be distributed evenly obove and below zero. A systematic mismatch between the model and the data should be evident as a detectable trend in the plot. If it deviates from a random cloud then we may need to <strong>revise our hypothesis</strong>.</p>
+<p>The plots below seems to have no systematic devation from <span class="math notranslate nohighlight">\(y = 0\)</span> other than random noise. A perfect fit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">residuals</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">y_calc</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">residuals</span><span class="p">,</span> <span class="s2">&quot;ko-&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="mi">25</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Plot of Residuals&quot;</span><span class="p">)</span>                 
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Days&quot;</span><span class="p">)</span>                    
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y residuals&quot;</span><span class="p">)</span>             
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">percent_residuals</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">y_calc</span><span class="p">)</span><span class="o">/</span><span class="n">y_calc</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">percent_residuals</span><span class="p">,</span> <span class="s2">&quot;ko-&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">.2</span><span class="p">,</span> <span class="mf">.2</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Plot of Fractional Residuals&quot;</span><span class="p">)</span>                  
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Days&quot;</span><span class="p">)</span>                      
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;percent y residuals&quot;</span><span class="p">)</span>         
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2_3_Fitting_Data_17_0.png" src="_images/2_3_Fitting_Data_17_0.png" />
+<img alt="_images/2_3_Fitting_Data_17_1.png" src="_images/2_3_Fitting_Data_17_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>Our skills are complete. We can <strong>plot</strong> experimental data and <strong>fit</strong> that data to an arbitrary function. We can <strong>visualize</strong> the line fit and <strong>evaluate</strong> if our model is valid. We now have a block of code that can be cut and pasted for <strong>repurposing</strong> in our experimental analysis. Choose one of these code blocks and use it as a <strong>recipe</strong> for plotting your experimental data. Write once, use many times - that is the way of Python.</p>
+<div class="section" id="what-we-have-accomplished">
+<h3>What We Have Accomplished<a class="headerlink" href="#what-we-have-accomplished" title="Permalink to this headline">¶</a></h3>
+<p>The five workbooks in this series gave us an introduction to using <strong>NumPy</strong> with <strong>Python</strong> to give us a useful calculator; using <strong>Pandas</strong> to import and use data as data frames; using <strong>MatPlotLib</strong> to plot functions and experimental data; and using <strong>SciPy</strong> to optimize curve fits for model functions and to perform linear regression fits for linear functions.</p>
+</div>
+<div class="section" id="a-look-ahead">
+<h3>A Look Ahead<a class="headerlink" href="#a-look-ahead" title="Permalink to this headline">¶</a></h3>
+<p>As we proceed through <strong>exploring chemistry</strong> using data analysis we will see <strong>new tools</strong> and techniques introduced where appropriate. These will be useful and convenient but we can do everything in this course using nothing more that the tools that we have already presented. Python with NumPy, SciPy, Panda and MatPlotLib will be our <strong>toolbox</strong>. Let us move forward and continue to use data to understand chemical concepts whenever we can.</p>
+</div>
+</div>
+<div class="section" id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>data file</strong> can be obtained from the resources section of the course <strong>moodle</strong> site. The contents of the file are displayed below so that you can make it yourself if you are unable to access moodle.</p>
+<p><strong>2_3_Data.txt</strong></p>
+<div class="highlight-Days,Zombies notranslate"><div class="highlight"><pre><span></span>0,1.00
+2,1.75
+7,8.13
+14,71.1
+17,165
+19,306
+21,521
+22,744
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="2_2_Plotting_Data.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Pandas and Plotting Data</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="S1_Python_Instead_of_Excel.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Python vs. Microsoft Excel</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Barry Linkletter<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
