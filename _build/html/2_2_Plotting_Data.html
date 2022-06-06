@@ -1,0 +1,620 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pandas and Plotting Data &#8212; Python and Chemistry</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="SciPy and Fitting Data" href="2_3_Fitting_Data.html" />
+    <link rel="prev" title="Making Better Plots" href="2_1_Better_Plots.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Python and Chemistry</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="start.html">
+   Table of Contents
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Basic Skills
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_1_Calculator.html">
+   Basic Math with Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_2_Simple_Plots.html">
+   Making Plots Using Python
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Interpretting Data
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_1_Better_Plots.html">
+   Making Better Plots
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Pandas and Plotting Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_3_Fitting_Data.html">
+   SciPy and Fitting Data
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  More Skills
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="S1_Python_Instead_of_Excel.html">
+   Python vs. Microsoft Excel
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="S2_Styling_Plots.html">
+   Styling Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="S3_Solving_Equations.html">
+   Solving Equations with SymPy
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="E1_The_ICE_Table_in_Python.html">
+   The ICE Table in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="E2_Plotting_Reaction_Kinetics_to_Determine_Order.html">
+   Plotting Reaction Kinetics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="E3_Order_of_Reaction_via_Python.html">
+   Order of Reaction via Python
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/2_2_Plotting_Data.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/blinkletter/MathWithPython"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/blinkletter/MathWithPython/issues/new?title=Issue%20on%20page%20%2F2_2_Plotting_Data.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/blinkletter/MathWithPython/master?urlpath=tree/docs/2_2_Plotting_Data.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-tools">
+   The Tools
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#your-data">
+   Your Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plot-the-data">
+   Plot The Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#don-t-connect-the-dots">
+   Don’t Connect the Dots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resources">
+   Resources
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Pandas and Plotting Data</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-tools">
+   The Tools
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#your-data">
+   Your Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plot-the-data">
+   Plot The Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#don-t-connect-the-dots">
+   Don’t Connect the Dots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resources">
+   Resources
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="pandas-and-plotting-data">
+<h1>Pandas and Plotting Data<a class="headerlink" href="#pandas-and-plotting-data" title="Permalink to this headline">¶</a></h1>
+<p>We have seen how to plot a function by generating a list of numbers for an x-axis and calculation a resulting y-axis from that list. Now let us consider plotting <strong>experimental data</strong>.</p>
+<p>There are two ways to generate a set of x,y data in python. We can <strong>type it in</strong> or we can <strong>read it in</strong> from a file. In this exercise we will demonstrate both. How should this data be represented? previously we used <strong>two corresponding lists</strong>. One list for the x values and another for the y values. Here we will begin using the <strong>pandas</strong> python library. It contains the tools for building a data structure called a <strong>dataframe</strong>. Dataframes are just a set of values arranged in columns and rows.</p>
+<div class="section" id="the-tools">
+<h2>The Tools<a class="headerlink" href="#the-tools" title="Permalink to this headline">¶</a></h2>
+<p>As always, we must begin by importing the tools that we will be using.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>                <span class="c1"># A library of math functions and data structure</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>               <span class="c1"># Contains the dataframe object and related methods</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>   <span class="c1"># A library of plotting functions</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="your-data">
+<h2>Your Data<a class="headerlink" href="#your-data" title="Permalink to this headline">¶</a></h2>
+<p>Consider the code block below. We are going to create a set of x,y data as <strong>two lists</strong> and then read in another set of x,y data using pandas.  <strong>Pandas</strong> provides the tool we will be using to <strong>import the data</strong>. We wont have to write a small program to read a text file - pandas will do that for us. We are not computer programmers, we are computer users and we will be standing by that philosophy.</p>
+<p><strong>Note</strong>: You can download this notebook using the link above but the <strong>datafile.csv</strong> file won’t come with it. You can obtain the data file from the resources on the <strong>moodle site</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Here is my experimental data as two lists&quot;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">18</span><span class="p">]</span>           <span class="c1"># A list of 6 numbers</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mf">2.5</span><span class="p">,</span><span class="mf">2.8</span><span class="p">,</span><span class="mf">5.6</span><span class="p">,</span><span class="mf">7.9</span><span class="p">,</span><span class="mf">8.2</span> <span class="p">]</span>   <span class="c1"># Another list of 6 numbers. Do they correlate to the first list?</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x values:&quot;</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y-values:&quot;</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+                               <span class="c1"># Read a data file. It should be in the same directory as this notebook</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Here is data read in from a data file as a data frame object&quot;</span><span class="p">)</span>
+<span class="n">xydata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;datafile.csv&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">xydata</span><span class="p">)</span>                <span class="c1"># Display is like print but uses the graphical features of this notebook</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Here is my experimental data as two lists
+x values: [0, 4, 6, 10, 15, 18]
+y-values: [0, 2.5, 2.8, 5.6, 7.9, 8.2]
+
+Here is data read in from a data file as a data frame object
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Time</th>
+      <th>Volts</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>0.11</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3.0</td>
+      <td>0.25</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5.0</td>
+      <td>0.34</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>10.0</td>
+      <td>0.45</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>20.0</td>
+      <td>0.58</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>50.0</td>
+      <td>0.61</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="plot-the-data">
+<h2>Plot The Data<a class="headerlink" href="#plot-the-data" title="Permalink to this headline">¶</a></h2>
+<p>We have two sets of data. One set is a <strong>pair of lists</strong> for x and y and the other is a <strong>dataframe object</strong>. We can plot the lists as previously demonstrated. Matplotlib is designed to use two lists for the data. It predates the pandas library and knows nothing of dataframes. We can address each column in a dataframe by using its heading and feed any two columns in a dataframe to Matplotlib that way. <strong>Examine</strong> the code blocks below and <strong>compare</strong> the two approaches.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="s2">&quot;ko-&quot;</span><span class="p">)</span>                       <span class="c1"># &quot;k&quot; = black, &quot;-&quot; = solid line, &quot;o&quot; = circles for data points</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Plotting a Pair of Lists&quot;</span><span class="p">)</span>      <span class="c1"># Title of the plot         </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;List of x data&quot;</span><span class="p">)</span>               <span class="c1"># x-axis label   </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;List of y data&quot;</span><span class="p">)</span>               <span class="c1"># y-axis label  </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Here is a plot of the data that was typed in as a pair of lists&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>                                 <span class="c1"># show the plot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Here is a plot of the data that was typed in as a pair of lists
+</pre></div>
+</div>
+<img alt="_images/2_2_Plotting_Data_5_1.png" src="_images/2_2_Plotting_Data_5_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xydata</span><span class="p">[</span><span class="s2">&quot;Time&quot;</span><span class="p">],</span> <span class="n">xydata</span><span class="p">[</span><span class="s2">&quot;Volts&quot;</span><span class="p">],</span> <span class="s2">&quot;b^-.&quot;</span><span class="p">)</span> <span class="c1"># &quot;b&quot; = blue, &quot;-.&quot; = dash-dot line, &quot;^&quot; = triangles for data points</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Plotting a Pair of Columns&quot;</span><span class="p">)</span>           <span class="c1"># Title of the plot         </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Column of x data&quot;</span><span class="p">)</span>                    <span class="c1"># x-axis label   </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Column of y data&quot;</span><span class="p">)</span>                    <span class="c1"># y-axis label  </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Here is a plot of two columns of data from the dataframe&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>                                        <span class="c1"># show the plot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Here is a plot of two columns of data from the dataframe
+</pre></div>
+</div>
+<img alt="_images/2_2_Plotting_Data_6_1.png" src="_images/2_2_Plotting_Data_6_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="don-t-connect-the-dots">
+<h2>Don’t Connect the Dots<a class="headerlink" href="#don-t-connect-the-dots" title="Permalink to this headline">¶</a></h2>
+<p>The plots above are “<strong>spaghetti plots</strong>”. The data points are connected by a line. This is a common way to plot statistical data but it is <strong>not favoured</strong> in chemistry. Lines should represent the <strong>model</strong> to which we are fitting the experimental data. For now let us demonstrate a “<strong>scatter plot</strong>”, a plot with data points only.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xydata</span><span class="p">[</span><span class="s2">&quot;Time&quot;</span><span class="p">],</span> <span class="n">xydata</span><span class="p">[</span><span class="s2">&quot;Volts&quot;</span><span class="p">],</span> <span class="s2">&quot;kx&quot;</span><span class="p">)</span> <span class="c1"># &quot;k&quot; = black, &quot;x&quot; = cross for data points</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Plotting a Pair of Columns&quot;</span><span class="p">)</span>           <span class="c1"># Title of the plot         </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Column of x data&quot;</span><span class="p">)</span>                    <span class="c1"># x-axis label   </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Column of y data&quot;</span><span class="p">)</span>                    <span class="c1"># y-axis label  </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Just the points. What function would you model this with?&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.7</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>                                        <span class="c1"># show the plot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Just the points. What function would you model this with?
+</pre></div>
+</div>
+<img alt="_images/2_2_Plotting_Data_8_1.png" src="_images/2_2_Plotting_Data_8_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>Now we can use <strong>experimental data</strong> in our plots. How can we interpret this data? <strong>Next</strong> we will explore fitting a proposed model to the data. Does our model fit? If so, we may be on the right track, if not then we may need to change the model.</p>
+</div>
+<div class="section" id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>datafile.csv</strong> data file can be obtained from the resources section of the course <strong>moodle site</strong>. The contents of the file are displayed below so that you can <strong>make it yourself</strong> if you are unable to access moodle.</p>
+<p><strong>datafile.csv</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span><span class="p">,</span><span class="n">Volts</span>
+<span class="mf">1.0</span><span class="p">,</span><span class="mf">0.11</span>
+<span class="mf">3.0</span><span class="p">,</span><span class="mf">0.25</span>
+<span class="mf">5.0</span><span class="p">,</span><span class="mf">0.34</span>
+<span class="mf">10.0</span><span class="p">,</span><span class="mf">0.45</span>
+<span class="mf">20.0</span><span class="p">,</span><span class="mf">0.58</span>
+<span class="mf">50.0</span><span class="p">,</span><span class="mf">0.61</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="2_1_Better_Plots.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Making Better Plots</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="2_3_Fitting_Data.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">SciPy and Fitting Data</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Barry Linkletter<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

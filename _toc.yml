@@ -1,0 +1,25 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: start
+parts:
+    - caption: Basic Skills
+      chapters:
+        - file: 1_1_Calculator
+        - file: 1_2_Simple_Plots
+    - caption: Interpretting Data
+      chapters:
+      - file: 2_1_Better_Plots
+      - file: 2_2_Plotting_Data
+      - file: 2_3_Fitting_Data
+    - caption: More Skills
+      chapters:
+      - file: S1_Python_Instead_of_Excel
+      - file: S2_Styling_Plots
+      - file: S3_Solving_Equations
+    - caption: Exercises
+      chapters: 
+      - file: E1_The_ICE_Table_in_Python
+      - file: E2_Plotting_Reaction_Kinetics_to_Determine_Order
+      - file: E3_Order_of_Reaction_via_Python
