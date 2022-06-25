@@ -51,8 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="The ICE Table in Python" href="E1_The_ICE_Table_in_Python.html" />
@@ -78,6 +78,11 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/Ouroboros-benzene.svg.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Python and Chemistry</h1>
@@ -91,7 +96,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="start.html">
-   Table of Contents
+   Math with Python
   </a>
  </li>
 </ul>
@@ -493,7 +498,10 @@ The second evaluates to approx. x = 1.18046042171637
 </div>
 <div class="output text_latex math notranslate nohighlight">
 \[\displaystyle - 3 \left(\frac{1}{6} - \frac{\sqrt{37}}{6}\right)^{2} - \frac{\sqrt{37}}{6} + \frac{19}{6}\]</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>and that can be evaluated to x = 0.e-124
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>and that can be evaluated to x =
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0.e-124
 which reveals the limits of floating point precision.
 
 If we expand (use algebra) rather than evaluate (calculate),
@@ -554,7 +562,7 @@ we find that x = 0 exactly.
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/S3_Solving_Equations_13_0.png" src="_images/S3_Solving_Equations_13_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x7f8e82a025e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x106903220&gt;
 </pre></div>
 </div>
 </div>

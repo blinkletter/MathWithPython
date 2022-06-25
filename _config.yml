@@ -3,7 +3,7 @@
 
 title: Python and Chemistry
 author: Barry Linkletter
-#logo: PhysOrg.png
+logo: Ouroboros-benzene.svg.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html

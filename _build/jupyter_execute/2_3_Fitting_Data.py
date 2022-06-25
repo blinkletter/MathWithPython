@@ -7,7 +7,7 @@
 # We can use a computer to do all that work for us. There are many tools available. In this course we will use the tools contained in the **SciPy** library. This library provides tools for **scientific computing** and we will only use a small subset of its capabilities.
 # 
 # ## The Tools
-# As always, we must begin by importing the **tools** that we will be using.
+# As always, we must begin by importing the **tools** that we will be using. 
 
 # In[1]:
 

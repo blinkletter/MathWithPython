@@ -59,7 +59,9 @@ print(round(Ka,7))
 # 
 # $$K_a = \frac{x \cdot x}{some value-x}$$
 # 
-# We need to solve for $x$. sympy will do all the hard work.
+# ### Using SymPy
+# 
+# We need to solve for $x$. SymPy will do all the hard work.
 
 # In[2]:
 
@@ -130,11 +132,16 @@ pH = -math.log10(change)
 print("pH = {:.3}".format(pH))
 
 
+# In[7]:
+
+
+import sympy
+
+x = sympy.symbols("x")
+
+expr = x*x/(initial_conc-x) - Ka
+display(expr)
+
+
 # ## Summary
 # We can now **calculate** the $pH$ of a solution of a weak acid given an amount of acid, the volume and the $pK_a$ value for the weak acid. We can **change** the values in the first block and then execute the notebook code to get to the final answer. We will never need to do math again (except on the test and final exam, so don't get too lazy).
-
-# In[ ]:
-
-
-
-
