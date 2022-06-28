@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Order of Reaction via Python
+# # Order of Reaction via *Python*
 # We know that the **rate law** for a reaction can be extressed as...
 # 
 # $$\nu = k\cdot [A]^m[B]^n$$ 

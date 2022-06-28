@@ -94,7 +94,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="start.html">
-   Math with Python
+   Python and Chemistry
   </a>
  </li>
 </ul>
@@ -106,12 +106,18 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="1_1_Calculator.html">
-   Basic Math with Python
+   Basic Math with
+   <em>
+    Python
+   </em>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="1_2_Simple_Plots.html">
-   Making Plots Using Python
+   Making Plots Using
+   <em>
+    Python
+   </em>
   </a>
  </li>
 </ul>
@@ -128,7 +134,10 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Pandas and Plotting Data
+   <em>
+    Pandas
+   </em>
+   and Plotting Data
   </a>
  </li>
  <li class="toctree-l1">
@@ -374,9 +383,9 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="pandas-and-plotting-data">
-<h1>Pandas and Plotting Data<a class="headerlink" href="#pandas-and-plotting-data" title="Permalink to this headline">¶</a></h1>
-<p>We have seen how to plot a function by generating a list of numbers for an x-axis and calculation a resulting y-axis from that list. Now let us consider plotting <strong>experimental data</strong>.</p>
-<p>There are two ways to generate a set of x,y data in python. We can <strong>type it in</strong> or we can <strong>read it in</strong> from a file. In this exercise we will demonstrate both. How should this data be represented? previously we used <strong>two corresponding lists</strong>. One list for the x values and another for the y values. Here we will begin using the <strong>pandas</strong> python library. It contains the tools for building a data structure called a <strong>dataframe</strong>. Dataframes are just a set of values arranged in columns and rows.</p>
+<h1><em>Pandas</em> and Plotting Data<a class="headerlink" href="#pandas-and-plotting-data" title="Permalink to this headline">¶</a></h1>
+<p>We have seen how to plot a function by generating a list of numbers for an <em>x</em>-axis and calculation a resulting <em>y</em>-axis from that list. Now let us consider plotting <strong>experimental data</strong>.</p>
+<p>There are two ways to generate a set of <em>x</em>,<em>y</em> data in <em>Python</em>. We can <strong>type it in</strong> or we can <strong>read it in</strong> from a file. In this exercise we will demonstrate both. How should this data be represented? Previously, we used <strong>two corresponding lists</strong>. One list for the <em>x</em> values and another for the <em>y</em> values. Here we will begin using the <em><strong>Pandas</strong></em> library. It contains the tools for building a data structure called a <strong>dataframe</strong>. Dataframes are just a set of values arranged in columns and rows.</p>
 <div class="section" id="the-tools">
 <h2>The Tools<a class="headerlink" href="#the-tools" title="Permalink to this headline">¶</a></h2>
 <p>As always, we must begin by importing the tools that we will be using.</p>
@@ -392,7 +401,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="your-data">
 <h2>Your Data<a class="headerlink" href="#your-data" title="Permalink to this headline">¶</a></h2>
-<p>Consider the code block below. We are going to create a set of x,y data as <strong>two lists</strong> and then read in another set of x,y data using pandas.  <strong>Pandas</strong> provides the tool we will be using to <strong>import the data</strong>. We wont have to write a small program to read a text file - pandas will do that for us. We are not computer programmers, we are computer users and we will be standing by that philosophy.</p>
+<p>Consider the code block below. We are going to create a set of <em>x,y</em> data as <strong>two lists</strong> and then read in another set of <em>x,y</em> data using <em>Pandas</em>.  <em><strong>Pandas</strong></em> provides the tool we will be using to <strong>import the data</strong>. We wont have to write a small program to read a text file - <em>Pandas</em> will do that for us. We are not computer programmers, we are computer users and we will be standing by that philosophy.</p>
 <p><strong>Note</strong>: You can download this notebook using the link above but the <strong>datafile.csv</strong> file won’t come with it. You can obtain the data file from the resources on the <strong>moodle site</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -477,7 +486,7 @@ Here is data read in from a data file as a data frame object
 </div>
 <div class="section" id="plot-the-data">
 <h2>Plot The Data<a class="headerlink" href="#plot-the-data" title="Permalink to this headline">¶</a></h2>
-<p>We have two sets of data. One set is a <strong>pair of lists</strong> for x and y and the other is a <strong>dataframe object</strong>. We can plot the lists as previously demonstrated. Matplotlib is designed to use two lists for the data. It predates the pandas library and knows nothing of dataframes. We can address each column in a dataframe by using its heading and feed any two columns in a dataframe to Matplotlib that way. <strong>Examine</strong> the code blocks below and <strong>compare</strong> the two approaches.</p>
+<p>We have two sets of data. One set is a <strong>pair of lists</strong> for <em>x</em> and <em>y</em> and the other is a <strong>dataframe object</strong>. We can plot the lists as previously demonstrated. <em>MatPlotLib</em> is designed to use two lists for the data. It predates the <em>Pandas</em> library and knows nothing of dataframes. We can address each column in a dataframe by using its heading and feed any two columns in a dataframe to <em>MatPlotLib</em> that way. <strong>Examine</strong> the code blocks below and <strong>compare</strong> the two approaches.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="s2">&quot;ko-&quot;</span><span class="p">)</span>                       <span class="c1"># &quot;k&quot; = black, &quot;-&quot; = solid line, &quot;o&quot; = circles for data points</span>

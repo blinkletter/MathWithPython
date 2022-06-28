@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Pandas and Plotting Data
-# We have seen how to plot a function by generating a list of numbers for an x-axis and calculation a resulting y-axis from that list. Now let us consider plotting **experimental data**.
+# # *Pandas* and Plotting Data
+# We have seen how to plot a function by generating a list of numbers for an *x*-axis and calculation a resulting *y*-axis from that list. Now let us consider plotting **experimental data**.
 # 
-# There are two ways to generate a set of x,y data in python. We can **type it in** or we can **read it in** from a file. In this exercise we will demonstrate both. How should this data be represented? previously we used **two corresponding lists**. One list for the x values and another for the y values. Here we will begin using the **pandas** python library. It contains the tools for building a data structure called a **dataframe**. Dataframes are just a set of values arranged in columns and rows.
+# There are two ways to generate a set of *x*,*y* data in *Python*. We can **type it in** or we can **read it in** from a file. In this exercise we will demonstrate both. How should this data be represented? Previously, we used **two corresponding lists**. One list for the *x* values and another for the *y* values. Here we will begin using the ***Pandas*** library. It contains the tools for building a data structure called a **dataframe**. Dataframes are just a set of values arranged in columns and rows.
 # 
 # ## The Tools
 # As always, we must begin by importing the tools that we will be using.
@@ -19,7 +19,7 @@ import matplotlib.pyplot as plt   # A library of plotting functions
 
 # ## Your Data
 # 
-# Consider the code block below. We are going to create a set of x,y data as **two lists** and then read in another set of x,y data using pandas.  **Pandas** provides the tool we will be using to **import the data**. We wont have to write a small program to read a text file - pandas will do that for us. We are not computer programmers, we are computer users and we will be standing by that philosophy.
+# Consider the code block below. We are going to create a set of *x,y* data as **two lists** and then read in another set of *x,y* data using *Pandas*.  ***Pandas*** provides the tool we will be using to **import the data**. We wont have to write a small program to read a text file - *Pandas* will do that for us. We are not computer programmers, we are computer users and we will be standing by that philosophy.
 # 
 # **Note**: You can download this notebook using the link above but the **datafile.csv** file won't come with it. You can obtain the data file from the resources on the **moodle site**.
 
@@ -39,7 +39,8 @@ display(xydata)                # Display is like print but uses the graphical fe
 
 
 # ## Plot The Data
-# We have two sets of data. One set is a **pair of lists** for x and y and the other is a **dataframe object**. We can plot the lists as previously demonstrated. Matplotlib is designed to use two lists for the data. It predates the pandas library and knows nothing of dataframes. We can address each column in a dataframe by using its heading and feed any two columns in a dataframe to Matplotlib that way. **Examine** the code blocks below and **compare** the two approaches.
+# 
+# We have two sets of data. One set is a **pair of lists** for *x* and *y* and the other is a **dataframe object**. We can plot the lists as previously demonstrated. *MatPlotLib* is designed to use two lists for the data. It predates the *Pandas* library and knows nothing of dataframes. We can address each column in a dataframe by using its heading and feed any two columns in a dataframe to *MatPlotLib* that way. **Examine** the code blocks below and **compare** the two approaches.
 
 # In[3]:
 

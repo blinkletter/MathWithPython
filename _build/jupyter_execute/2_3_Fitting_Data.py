@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # SciPy and Fitting Data
+# # *SciPy* and Fitting Data
+# 
 # We have plotted functions and plotted experimental data. How can we use both of these skills to **interpret the results** of our experiment? We could try plotting a function on the same plot as our data and changing the parameters of the function until it tracked closely to the data. This is called "**optimization**". We could try to optimize the fit by eye, but there is a better way.
 # 
-# We can use a computer to do all that work for us. There are many tools available. In this course we will use the tools contained in the **SciPy** library. This library provides tools for **scientific computing** and we will only use a small subset of its capabilities.
+# We can use a computer to do all that work for us. There are many tools available. In this course we will use the tools contained in the ***SciPy*** library. This library provides tools for **scientific computing** and we will only use a small subset of its capabilities.
 # 
 # ## The Tools
 # As always, we must begin by importing the **tools** that we will be using. 
@@ -50,13 +51,14 @@ plt.show()                                          # show the plot
 
 
 # ## Propose a Model
-# Are we doomed? First we must understand the data by **fitting it to a model**. This looks like exponential growth (we know that living things follow this model when resources are unlimited) so let us model that hypothesis and see if it is a good fit. The formula for exponential growth of a disease is...
+# 
+# Are we doomed? First we must understand the data by **fitting it to a model**. This looks like exponential growth (we know that living things follow this model when resources are unlimited) so let us model that hypothesis and see if it is a good fit. The formula for exponential growth of a disease is&hellip;
 # 
 # $$\frac{Z_t}{Z_0}=e^{(r-1)t}$$
 # 
-# $\frac{Z_t}{Z_0} =$ relative increase in zombie population <br>
-# $r =$ replication factor (r = 1 means balanced zombie production/destruction)<br>
-# $t =$ time
+# $\frac{Z_t}{Z_0}$ = relative increase in zombie population <br>
+# *r* = replication factor (r = 1 means balanced zombie production/destruction)<br>
+# *t* = time
 # 
 # ## Linearizing the Equation
 # Most simple equations can be **converted to a linear form**. We can log both sides to get the following linear equation.
@@ -78,9 +80,10 @@ plt.show()
 
 
 # ## Fit the Line
-# We can then use the statistical tools in SciPy to perform a **curve fit** optimization. We will construct a line based on the parameters of the line fit and display it on the same plot as the data. **Does it fit**? We can also report **statistical parameters** based on the line fit to help us with that decision. We will not use any statistics other than the parameters for the fit itself in this example. Consider the following code and determine what each command accomplishes. Did the linearized data fit the **linear function**?
 # 
-# **Note**: The `scipy.optimize.curve_fit()` function returns a list that contains a list of parameters and a matrix for the covariance. The coefficients will follow the order that they are defined in the function used for the fit. See the [documentation](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html) for more information. 
+# The statistical tools in *SciPy* can be used to perform a **curve fit** optimization. We will construct a **line** based on the parameters of the line fit and **display** that line on the same plot as the data. **Does it fit**? We can also report **statistical parameters** from the line fit calculation to help us with that decision. We will not use any statistics other than the parameters for the fit itself in this example. Consider the following code and determine what each command accomplishes. Did the linearized data fit the **linear function**?
+# 
+# **Note**: The `scipy.optimize.curve_fit()` function returns a list that contains a list of coefficients (your answers) and a matrix for the covariance (your statistical scores). The coefficients will follow the order that they are defined in the function used for the fit. See the [documentation](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html) for more information. 
 
 # In[5]:
 
@@ -113,9 +116,9 @@ print("The intercept is {:.3f} +/- {:.3f}".format(intercept, 2*stdev_int))
 
 
 # ## Fit the Line with Linear Regression
-# In the above code we used the `scipy.optimize.curve_fit()` function to **fit** an arbitrary function to data. This is a **general-purpose** method and works with any function. You may be familiar with Microsoft Excel and the need to fit **linear data** (unless you want to bother with the solver system of Excel). Excel uses a **linear regression** method. It is exactly the same as a **curve fit** but assumes that the function is always a linear $y = mx + b$ system.
+# In the above code we used the `scipy.optimize.curve_fit()` function to **fit** an arbitrary function to data. This is a **general-purpose** method and works with any function. You may be familiar with Microsoft *Excel* and the need to fit **linear** data (unless you want to bother with the *solver* system of *Excel*). *Excel* uses a **linear regression** method. It is exactly the same as a **curve fit** but assumes that the function is always a linear *y = mx + b* system.
 # 
-# **SciPy** has the same linear regression function. We can use the `scipy.stats.linregress()` function. We send it the x,y data and it returns an **object** that contains all the results, including standard **statistical information**. Consider the code below and examine the purpose of each command. 
+# ***SciPy*** has the same linear regression function. We can use the `scipy.stats.linregress()` function. We send it the *x,y* data and it returns an **object** that contains all the results, including standard **statistical information**. Consider the code below and examine the purpose of each command. 
 
 # In[6]:
 
@@ -144,9 +147,10 @@ print("RSQ = {:.3f}".format(fit.rvalue**2))
 
 
 # ## Fit the Curve
+# 
 # Linear fits are so "Excel". We can **fit the curve** function itself without needing to linearize the data.  This is more broadly applicable. However, I do recommend linearizing where possible because a subtle curve in what is supposed to be a straight line **stands out** to our human brains. We would see clearly that, even though the fit is close, the model is wrong. We would not pick up that slight difference in fitting a curve (is it slightly too curved?) and would need to use statistical analysis to detect such a **deviation from the model** (such as plotting the residuals - which you should always do, even with linear plots.)
 # 
-# All we have to do is use the **exact same** code block as above but with a different function. That is the power of these notebooks. **Cut and paste** is a useful tool here.
+# All we have to do is use the **exact same** code block as above but with a different curve fit function. That is the power of these notebooks. **Cut and paste** is a useful tool here.
 
 # In[7]:
 
@@ -172,7 +176,8 @@ print("The replication factor, r, is",r)
 
 
 # ## Smoothing the Curve
-# Observe above that the curve is a **series of straight lines** connecting the data points calculated at the given values of the x-axis. To make a **smooth curve**, we should use many more points. We will make a set of x-values with 100 evenly spaced values between the minimum and miximum values of the data x-axis. Consider the following clode block and try to understand what each command does.
+# 
+# Observe above that the curve is a **series of straight lines** connecting the data points calculated at the given values of the *x*-axis. To make a **smooth curve**, we should use many more points. We will make a set of *x*-values with 100 evenly spaced values between the minimum and maximum values of the data *x*-axis. Consider the following clode block and try to **understand** what each command does.
 
 # In[8]:
 
@@ -212,9 +217,10 @@ print("RSQ = {:.4f}".format(RSQ))
 
 
 # ## Plotting Residuals
-# We can **check the model** by plotting the **residuals**. this is the difference between the experimental y-axis and the calculated y-axis from the fit to the model. **Random error** will be distributed evenly obove and below zero. A systematic mismatch between the model and the data should be evident as a detectable trend in the plot. If it deviates from a random cloud then we may need to **revise our hypothesis**.
 # 
-# The plots below seems to have no systematic devation from $y = 0$ other than random noise. A perfect fit.
+# We can **check the model** by plotting the **residuals**. This is the difference between the experimental *y*-axis and the calculated *y*-axis from the fit to the model. **Random error** will be distributed evenly obove and below zero. A systematic mismatch between the model and the data should be evident as a detectable trend in the plot. If it deviates from a random cloud then we may need to **revise our hypothesis**.
+# 
+# The plots below seems to have no systematic deviation from *y = 0* other than **random noise**. A perfect fit.
 
 # In[9]:
 
@@ -243,17 +249,23 @@ plt.show()
 
 
 # ## Summary
-# Our skills are complete. We can **plot** experimental data and **fit** that data to an arbitrary function. We can **visualize** the line fit and **evaluate** if our model is valid. We now have a block of code that can be cut and pasted for **repurposing** in our experimental analysis. Choose one of these code blocks and use it as a **recipe** for plotting your experimental data. Write once, use many times - that is the way of Python.
+# 
+# Our skills are complete. We can **plot** experimental data and **fit** that data to an arbitrary function. We can **visualize** the line fit and **evaluate** if our model is valid. We now have a block of code that can be **repurposed** in our experimental analyses. Choose one of these code blocks and use it as a **recipe** for plotting your experimental data. Write once, use many times - that is the way of *Python*.
+# 
 # ### What We Have Accomplished
-# The five workbooks in this series gave us an introduction to using **NumPy** with **Python** to give us a useful calculator; using **Pandas** to import and use data as data frames; using **MatPlotLib** to plot functions and experimental data; and using **SciPy** to optimize curve fits for model functions and to perform linear regression fits for linear functions.
+# 
+# We have had an introduction to using ***NumPy*** with ***Python*** to give us a useful calculator; using ***Pandas*** to import and manipulate data as dataframes; using ***MatPlotLib*** to plot functions and experimental data; and using ***SciPy*** to optimize curve fits for model functions and to perform linear regression fits for linear functions.
+# 
 # ### A Look Ahead
-# As we proceed through **exploring chemistry** using data analysis we will see **new tools** and techniques introduced where appropriate. These will be useful and convenient but we can do everything in this course using nothing more that the tools that we have already presented. Python with NumPy, SciPy, Panda and MatPlotLib will be our **toolbox**. Let us move forward and continue to use data to understand chemical concepts whenever we can.
+# 
+# As we proceed through **exploring chemistry** using data analysis, we will see **new tools** and techniques introduced where appropriate. These will be useful and convenient but we can do, everything in this course using nothing more that the tools that we have already presented. *Python* with *NumPy*, *SciPy*, *Pandas* and *MatPlotLib* will be our **toolbox**. Let us move forward and continue to use data to understand chemical concepts whenever we can.
 # 
 # ## Resources
 # The **data file** can be obtained from the resources section of the course **moodle** site. The contents of the file are displayed below so that you can make it yourself if you are unable to access moodle.
 # 
 # **2_3_Data.txt**
-# ```Days,Zombies
+# ```
+# Days,Zombies
 # 0,1.00
 # 2,1.75
 # 7,8.13

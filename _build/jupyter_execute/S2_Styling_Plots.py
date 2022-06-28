@@ -2,13 +2,13 @@
 # coding: utf-8
 
 # # Styling Plots
-# This exercise uses the problem presented in the *Plotting Reaction Kinetics* notebook to demonstrate ways to change the **style** in plots. What do you like? Express your personality through plots.
+# This exercise uses the problem presented in the *Plotting Reaction Kinetics* exercise to demonstrate ways to change the **style** in plots. What do you prefer? Express your personality through plots.
 # 
-# Reading in data from a file and plotting the data is a useful way to quickly **evaluate** an experiment. We will imagine that our data is in a file called "data.txt" that is located in the same directory as this notebook. In this example we will again examine concentration vs. time data for a reaction and quckly determine if the reaction is first or second order. But we will now be **getting fancy** with our plot styles.
+# Reading in data from a file and plotting the data is a useful way to quickly **evaluate** an experiment. We will imagine that our data is in a file called "data.txt" that is located in the same directory as this notebook. In this example we will again examine concentration vs. time data for a reaction and quickly determine if the reaction is first or second order. But we will now be **getting fancy** with our plot styles.
 # 
-# First we load up the tools. We will need tools from the `matplotlib.pyplot`, `numpy` and `pandas` packages.
+# First we load up the tools. We will need tools from the *MatPlotLib*, *NumPy* and *Pandas* packages.
 # 
-# In this exercise the emphasis will be on developing **more sophisticated plots** for a basic experiment.
+# In this exercise, the emphasis will be on developing **more sophisticated plots** for a basic experiment.
 
 # In[1]:
 
@@ -20,7 +20,8 @@ from scipy import stats
 
 
 # ## The Data
-# We will **repeat** the idea of plotting reaction kinetic data to determine order. Below is the code that does this, as explained in the *Plotting Reaction Kinetics* notebook.
+# 
+# We will **repeat** the idea of plotting reaction kinetic data to determine order. Below is the code that does this.
 # 
 
 # In[2]:
@@ -33,12 +34,12 @@ x_col_name, y_col_name = df.columns.values[0:2]
 df["1/conc"] = 1/df[y_col_name]
 df["ln conc"] = np.log(df[y_col_name])
 
-display(df)  
+print(df)  
 
 
 # ## Two Plots in One Figure
 # 
-# The *Plotting Reaction Kinetics*  exercise used two **separate** plots and gave a clear answer. You could have stopped there. But let us learn a little more about what the Matplotlib library can do for us. What if we wanted to present both plots **side by side**? To do this will will create a "**figure**" object with the `matplotlib.pyplot` tools. Then we will add two separate "**axes**" (plots) into the figure.
+# The *Plotting Reaction Kinetics*  exercise used two **separate** plots and gave a clear answer. You could have stopped there. But let us learn a little more about what the *MatPlotLib* library can do for us. What if we wanted to present both plots **side by side**? To do this will will create a "**figure**" object with the `matplotlib.pyplot` tools. Then we will add two separate "**axes**" (plots) into the figure.
 # 
 # So we will create a figure and drop the two plots previously presented above into it. Take note of the code below and try to see how this was accomplished.
 
@@ -76,11 +77,14 @@ plt.show()                                   # each of the commands above modifi
 
 
 # ## More Sophisticated Plotting
-# There are **many settings** for formatiing your plot and many ways control the Matplotlib system. Using the `matplotlib.pyplot` sublibrary gives us a function-oriented system. Observe above how everything was a function (calling `Do_That(with_this, and_this)`) or assigments (`Do_That.setting = whatever`). 
 # 
-# Python is an **object-oriented** language and we have already seen how we can create an **object** with a function call and than have the object manipulate itself using "**methods**". These are just functions built into the object that act on that object.  For example, we can create a wheel object using `circle = wheel()`. We called the wheel function that was designed to create objects that represent the wheel object.  We named our wheel object "circle".  Now we can call any method whithin a wheel object named "circle" and **change it**.  For example, wheel objects contain the method `turn()`. If we state `circle.turn(90)` we might be turning the wheel object named "circle" by 90 degrees. It's exactly the same as `circle = wheel.turn(circle, 90)`. 
+# There are **many settings** for formatiing your plot and many ways control the *MatPlotLib* system. Using the *PyPlot* sublibrary gives us a function-oriented system. Observe above how everything was a function (calling `Do_That(with_this, and_this)`) or assigments (`Do_That.setting = whatever`). 
 # 
-# Consider the following code and observe how we create an object that is a **figure** and then creates two **axes** objects within it (these are the plots). We can manipulate each object by calling the methods that act on them. The result will be the same as in the above code but more options for styling are available this way.
+# *Python* is an **object-oriented** language and we have already seen how we can create an **object** with a function call and than have the object manipulate itself using "**methods**". Methods are functions built into the object that act on that object. For example, we can create a wheel object using `circle = wheel()`. We called the wheel function that was designed to create objects that represent the wheel.  We named our wheel object "circle".  Now we can call any wheel object method within "circle" and **change it**.  For example, wheel objects contain the method `turn()`. If we state `circle.turn(90)` we might be turning the wheel object named "circle" by 90 degrees. It's exactly the same as `circle = wheel.turn(circle, 90)`. 
+# 
+# Consider the following code and observe how we create an object that is a **figure** and then created two **axes** objects within it (these are the plots). We can manipulate each object by calling the methods that act upon them. The result will be the same as in the above code, but more options for styling are available this way.
+# 
+# In the ned you will be best served by keeping things simple and using the same plkotting settings again and again. Choose your style and stick with it.
 
 # In[4]:
 
@@ -226,7 +230,7 @@ ax.set(title="Plotted as First Order",       # Title of the plot
           ylabel="ln conc",                  # y-axis label
           xlabel=x_col_name,                 # x-axis label
           xlim=[0,10],                       # x-axis limits
-          ylim=[-0.7,1.1])                        # y-axis limits
+          ylim=[-0.7,1.1])                   # y-axis limits
 
 #fig.savefig("my-first-figure2.pdf")
 plt.show()

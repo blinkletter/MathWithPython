@@ -96,7 +96,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="start.html">
-   Math with Python
+   Python and Chemistry
   </a>
  </li>
 </ul>
@@ -108,12 +108,18 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="1_1_Calculator.html">
-   Basic Math with Python
+   Basic Math with
+   <em>
+    Python
+   </em>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="1_2_Simple_Plots.html">
-   Making Plots Using Python
+   Making Plots Using
+   <em>
+    Python
+   </em>
   </a>
  </li>
 </ul>
@@ -130,12 +136,18 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2_2_Plotting_Data.html">
-   Pandas and Plotting Data
+   <em>
+    Pandas
+   </em>
+   and Plotting Data
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2_3_Fitting_Data.html">
-   SciPy and Fitting Data
+   <em>
+    SciPy
+   </em>
+   and Fitting Data
   </a>
  </li>
 </ul>
@@ -157,7 +169,10 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="S3_Solving_Equations.html">
-   Solving Equations with SymPy
+   Solving Equations with
+   <em>
+    SymPy
+   </em>
   </a>
  </li>
 </ul>
@@ -169,7 +184,10 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="E1_The_ICE_Table_in_Python.html">
-   The ICE Table in Python
+   The ICE Table in
+   <em>
+    Python
+   </em>
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -179,7 +197,10 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="E3_Order_of_Reaction_via_Python.html">
-   Order of Reaction via Python
+   Order of Reaction via
+   <em>
+    Python
+   </em>
   </a>
  </li>
 </ul>
@@ -388,7 +409,7 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="tex2jax_ignore mathjax_ignore section" id="plotting-reaction-kinetics">
 <h1>Plotting Reaction Kinetics<a class="headerlink" href="#plotting-reaction-kinetics" title="Permalink to this headline">¶</a></h1>
 <p><strong>Reading</strong> in data from a file and <strong>plotting</strong> the data is a useful way to quickly <strong>evaluate an experiment</strong>. We will imagine that our data is in a <strong>file</strong> called “E2_DataA.csv” that is located in the same directory as this notebook. In this example, we will examine concentration vs. time data for a reaction and quickly determine if the reaction is <strong>first or second order</strong>. No plotting <strong>paper</strong> for us, we are <strong>digital</strong>!</p>
-<p>First we <strong>load</strong> up the <strong>tools</strong>. We will need tools from the Matplotlib.pyplot, NumPy and pandas packages.</p>
+<p>First we <strong>load</strong> up the <strong>tools</strong>. We will need tools from the <em>MatPlotLib</em>, <em>NumPy</em> and <em>Pandas</em> packages.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -401,7 +422,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="read-the-data">
 <h2>Read the Data<a class="headerlink" href="#read-the-data" title="Permalink to this headline">¶</a></h2>
-<p>We will read the file using the tools provided in the <strong>pandas library</strong>. The data file includes column <strong>headers</strong> in its first line. We will use the <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> function in pandas to create a <strong>dataframe</strong> object from the data file</p>
+<p>We will read the file using the tools provided in the <strong><em>Pandas</em> library</strong>. The data file includes column <strong>headers</strong> in its first line. We will use the <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> function in <em>Pandas</em> to create a <strong>dataframe</strong> object from the data file</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;E2_DataA.csv&quot;</span><span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="p">)</span> <span class="c1"># The fields are separated by commas.</span>
@@ -426,7 +447,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="make-a-quick-plot">
 <h2>Make a Quick Plot<a class="headerlink" href="#make-a-quick-plot" title="Permalink to this headline">¶</a></h2>
 <p>Let us plot the raw data and <strong>check</strong> it for any insanity. As you can see, it looks good. But is it a first order reaction or a second order reaction?</p>
-<p>We can address the columns using their <strong>names</strong>. We can plot any two columns as x and y values.</p>
+<p>We can address the columns using their <strong>names</strong>. We can plot any two columns as <em>x</em> and <em>y</em> values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;time (min)&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;conc (mM)&quot;</span><span class="p">]</span>     <span class="c1"># give the names to address the columns for the x and y data.</span>
@@ -465,8 +486,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="decisions-decisions">
 <h2>Decisions, Decisions<a class="headerlink" href="#decisions-decisions" title="Permalink to this headline">¶</a></h2>
-<p>We know how to plot first and second order reactions as <strong>linear plots</strong>. So let us set that up and plot each case. If the line is linear for one of the plots then we have a match. Let us see if we can make a <strong>decision</strong>.</p>
-<p>For a <strong>first order</strong> reaction we have <span class="math notranslate nohighlight">\(\ln [A] = \ln [A]_0 - k \cdot t\)</span> and plotting <span class="math notranslate nohighlight">\(\ln [A]_t\)</span> vs. <span class="math notranslate nohighlight">\(time\)</span> we will have a linear plot. However if the reaction is not first order then the line will curve. As we have seen, the integrated rate equation for <strong>second order</strong> is <span class="math notranslate nohighlight">\(\frac{1}{[A]}=\frac{1}{[A]_0} + k \cdot t\)</span>. So plotting <span class="math notranslate nohighlight">\(\frac{1}{[A]}\)</span> vs. <span class="math notranslate nohighlight">\(t\)</span></p>
+<p>We know how to plot first and second-order reactions as <strong>linear plots</strong>. So let us set that up and plot each case. If the line is linear for one of the plots then we have a match. Let us see if we can make a <strong>decision</strong>.</p>
+<p>For a <strong>first order</strong> reaction we have <span class="math notranslate nohighlight">\(\ln [A] = \ln [A]_0 - k \cdot t\)</span> and plotting <span class="math notranslate nohighlight">\(\ln [A]_t\)</span> vs. <span class="math notranslate nohighlight">\(time\)</span> we will have a linear plot. However if the reaction is not first order then the line will curve. As we have seen, the integrated rate equation for <strong>second order</strong> is <span class="math notranslate nohighlight">\(\frac{1}{[A]}=\frac{1}{[A]_0} + k \cdot t\)</span>. So plotting <span class="math notranslate nohighlight">\(\frac{1}{[A]}\)</span> vs. <span class="math notranslate nohighlight">\(t\)</span> will give a linear plot.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;1/conc&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">df</span><span class="p">[</span><span class="n">y_col_name</span><span class="p">]</span>
@@ -557,7 +578,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="now-we-plot">
 <h2>Now, We Plot<a class="headerlink" href="#now-we-plot" title="Permalink to this headline">¶</a></h2>
-<p>We have all the information we need now.  Let us plot the <strong>two cases</strong> and see if either of them fit the linear equations for <span class="math notranslate nohighlight">\(1^{st}\)</span> and <span class="math notranslate nohighlight">\(2^{nd}\)</span> order reactions. Which <strong>model</strong> fits the data? Use the code below to plot each case and decide for yourself.</p>
+<p>We have all the information we need now.  Let us plot the <strong>two cases</strong> and see if either of them fit the linear equations for 1<sup>st</sup> and 2<sup>nd</sup> order reactions. Which <strong>model</strong> fits the data? Use the code below to plot each case and decide for yourself.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">x_col_name</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;ln conc&quot;</span><span class="p">]</span>
@@ -607,7 +628,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
-<p>We have seen how to <strong>import</strong> data from a data file and use the tools of a pandas <strong>dataframe</strong> to manipulate it. We have seen how to plot this data and also have been introduced to a handful of options for changing the appearance of the plots. There are many ways to change the <strong>style</strong> in plots. See the “Plotting in Python for Fun and Profit” notebook for a few more ideas on making plots fit your style.</p>
+<p>We have seen how to <strong>import</strong> data from a data file and use the tools of a <em>Pandas</em> <strong>dataframe</strong> to manipulate it. We have seen how to plot this data and also have been introduced to a handful of options for changing the appearance of the plots. There are many ways to change the <strong>style</strong> in plots.</p>
 </div>
 <div class="section" id="resources">
 <h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
@@ -655,13 +676,13 @@ const thebe_selector_output = ".output, .cell_output"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">The ICE Table in Python</p>
+            <p class="prev-next-title">The ICE Table in <em>Python</em></p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="E3_Order_of_Reaction_via_Python.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Order of Reaction via Python</p>
+        <p class="prev-next-title">Order of Reaction via <em>Python</em></p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

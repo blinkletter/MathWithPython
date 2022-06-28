@@ -96,7 +96,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="start.html">
-   Math with Python
+   Python and Chemistry
   </a>
  </li>
 </ul>
@@ -108,12 +108,18 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="1_1_Calculator.html">
-   Basic Math with Python
+   Basic Math with
+   <em>
+    Python
+   </em>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="1_2_Simple_Plots.html">
-   Making Plots Using Python
+   Making Plots Using
+   <em>
+    Python
+   </em>
   </a>
  </li>
 </ul>
@@ -360,7 +366,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>In the <em><strong>Making Plots Using Python</strong></em> exercise we made a quick plot of an exponential decay function. Here we will demonstrate a few ways to <strong>format</strong> the plot. There are many, many options to try. Just search the web and you will see many examples. We will stick with a <strong>few basic</strong> formatting options that are most helpful.</p>
 <div class="section" id="your-first-plot-again">
 <h2>Your First Plot Again<a class="headerlink" href="#your-first-plot-again" title="Permalink to this headline">¶</a></h2>
-<p><strong>Previously</strong>, we plotted <span class="math notranslate nohighlight">\(y=e^{-x}\)</span>. Below is a repeat of that simple exercise.</p>
+<p><strong>Previously</strong>, we plotted <em>y = e<sup>–x</sup></em>. Below is a repeat of that simple exercise.</p>
 <p>What is missing? Should we have <strong>labels</strong> for each axis? A <strong>title</strong> perhaps? What other changes would you make?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -382,9 +388,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="the-same-thing-only-better">
 <h2>The Same Thing, Only Better<a class="headerlink" href="#the-same-thing-only-better" title="Permalink to this headline">¶</a></h2>
-<p>We can add elements to the plot such as <strong>titles and labels</strong>. We can set limits on the x- and y-axis. We can <strong>change the color</strong> of the line. Examine the code below and see how we did all that.</p>
-<p>The <strong>commands</strong> executed below are called “methods”.  They are functions built into the plt <strong>object</strong>. They modify the object according to the input for the method. When you enter <code class="docutils literal notranslate"><span class="pre">plt.ylabel(&quot;Amount&quot;)</span></code> the plt object has a <strong>label</strong> added to its y-axis. In the last line, the <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> method <strong>displays and clears</strong> the plt object.  Entering <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> a second time will display nothing unless you build a new plot.</p>
-<p>There are much <strong>more sophisticated</strong> ways to present plots and we will explore some aspects of this later when we plot two graphs in the same <strong>figure</strong>. However, this is all the style we need to know for now.</p>
+<p>We can add elements to the plot such as <strong>titles and labels</strong>. We can set limits on the <em>x</em>- and <em>y</em>-axis. We can <strong>change the color</strong> of the line. Examine the code below and see how we did all that.</p>
+<p>The <strong>commands</strong> executed below are called “methods”.  They are functions built into the <code class="docutils literal notranslate"><span class="pre">plt</span></code> <strong>object</strong>. They modify the object according to the input for the method. When you enter <code class="docutils literal notranslate"><span class="pre">plt.ylabel(&quot;Amount&quot;)</span></code>, the <code class="docutils literal notranslate"><span class="pre">plt</span></code> object has a <strong>label</strong> added to its <em>y</em>-axis. In the last line, the <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> method <strong>displays and clears</strong> the <code class="docutils literal notranslate"><span class="pre">plt</span></code> object.  Entering <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> a second time will display nothing unless you build a new plot.</p>
+<p>There are much <strong>more sophisticated</strong> ways to present plots and we will explore some aspects of this later. However, this is all the <strong>style</strong> that we need to know for now.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>                 <span class="c1"># A library of math functions and data structure</span>
@@ -413,11 +419,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="have-fun">
 <h2>Have Fun<a class="headerlink" href="#have-fun" title="Permalink to this headline">¶</a></h2>
-<p><strong>Change</strong> some settings above and see what happens. Try plotting a different functions: plot a sine wave; plot a straight line with a slope of <span class="math notranslate nohighlight">\(\pi\)</span>. <strong>Fool around</strong> with other values and explore. <strong>How</strong> do you get a sine function? <strong>Search</strong> the web for “NumPy and sine”. How do you get a built-in value for <span class="math notranslate nohighlight">\(\pi\)</span>? Search for NumPy and pi. Are you noticing a pattern here?</p>
+<p><strong>Change</strong> some settings above and see what happens. Try plotting a different functions: plot a sine wave; plot a straight line with a slope of <span class="math notranslate nohighlight">\(\pi\)</span>. <strong>Fool around</strong> with other values and explore. <strong>How</strong> do you get a sine function? <strong>Search</strong> the web for “<em>NumPy</em> and sine”. How do you get a built-in value for π? Search for <em>NumPy</em> and “pi”. Are you noticing a pattern here?</p>
 </div>
 <div class="section" id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
-<p>We have <strong>previously</strong> learned how to make a set of values for an x-axis, calculate a corresponding set of values for the y-axis and plot the data. Now we have learned <strong>how to add titles and labels</strong> and to <strong>set the color and style</strong> of the line. As we explore more ideas, a new plot setting may be introduced here and there. Keep an eye out for new <strong>opportunities to learn</strong> more about styling plots.</p>
+<p>We have <strong>previously</strong> learned how to make a set of values for an <em>x</em>-axis, calculate a corresponding set of values for the <em>y</em>-axis and plot the data. Now we have learned <strong>how to add titles and labels</strong> and to <strong>set the color and style</strong> of the line. As we explore more ideas, a new plot setting may be introduced here and there. Keep an eye out for new <strong>opportunities to learn</strong> more about styling plots.</p>
 </div>
 </div>
 
@@ -450,7 +456,7 @@ const thebe_selector_output = ".output, .cell_output"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Making Plots Using Python</p>
+            <p class="prev-next-title">Making Plots Using <em>Python</em></p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="2_2_Plotting_Data.html" title="next page">

@@ -94,7 +94,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="start.html">
-   Math with Python
+   Python and Chemistry
   </a>
  </li>
 </ul>
@@ -106,12 +106,18 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="1_1_Calculator.html">
-   Basic Math with Python
+   Basic Math with
+   <em>
+    Python
+   </em>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="1_2_Simple_Plots.html">
-   Making Plots Using Python
+   Making Plots Using
+   <em>
+    Python
+   </em>
   </a>
  </li>
 </ul>
@@ -128,12 +134,18 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2_2_Plotting_Data.html">
-   Pandas and Plotting Data
+   <em>
+    Pandas
+   </em>
+   and Plotting Data
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2_3_Fitting_Data.html">
-   SciPy and Fitting Data
+   <em>
+    SciPy
+   </em>
+   and Fitting Data
   </a>
  </li>
 </ul>
@@ -155,7 +167,10 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="S3_Solving_Equations.html">
-   Solving Equations with SymPy
+   Solving Equations with
+   <em>
+    SymPy
+   </em>
   </a>
  </li>
 </ul>
@@ -365,10 +380,10 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="styling-plots">
 <h1>Styling Plots<a class="headerlink" href="#styling-plots" title="Permalink to this headline">¶</a></h1>
-<p>This exercise uses the problem presented in the <em>Plotting Reaction Kinetics</em> notebook to demonstrate ways to change the <strong>style</strong> in plots. What do you like? Express your personality through plots.</p>
-<p>Reading in data from a file and plotting the data is a useful way to quickly <strong>evaluate</strong> an experiment. We will imagine that our data is in a file called “data.txt” that is located in the same directory as this notebook. In this example we will again examine concentration vs. time data for a reaction and quckly determine if the reaction is first or second order. But we will now be <strong>getting fancy</strong> with our plot styles.</p>
-<p>First we load up the tools. We will need tools from the <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas</span></code> packages.</p>
-<p>In this exercise the emphasis will be on developing <strong>more sophisticated plots</strong> for a basic experiment.</p>
+<p>This exercise uses the problem presented in the <em>Plotting Reaction Kinetics</em> exercise to demonstrate ways to change the <strong>style</strong> in plots. What do you prefer? Express your personality through plots.</p>
+<p>Reading in data from a file and plotting the data is a useful way to quickly <strong>evaluate</strong> an experiment. We will imagine that our data is in a file called “data.txt” that is located in the same directory as this notebook. In this example we will again examine concentration vs. time data for a reaction and quickly determine if the reaction is first or second order. But we will now be <strong>getting fancy</strong> with our plot styles.</p>
+<p>First we load up the tools. We will need tools from the <em>MatPlotLib</em>, <em>NumPy</em> and <em>Pandas</em> packages.</p>
+<p>In this exercise, the emphasis will be on developing <strong>more sophisticated plots</strong> for a basic experiment.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -381,7 +396,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="the-data">
 <h2>The Data<a class="headerlink" href="#the-data" title="Permalink to this headline">¶</a></h2>
-<p>We will <strong>repeat</strong> the idea of plotting reaction kinetic data to determine order. Below is the code that does this, as explained in the <em>Plotting Reaction Kinetics</em> notebook.</p>
+<p>We will <strong>repeat</strong> the idea of plotting reaction kinetic data to determine order. Below is the code that does this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;S2_DataA.csv&quot;</span><span class="p">)</span>
@@ -391,93 +406,27 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;1/conc&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">df</span><span class="p">[</span><span class="n">y_col_name</span><span class="p">]</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;ln conc&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">y_col_name</span><span class="p">])</span>
 
-<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>  
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>time (min)</th>
-      <th>conc (mM)</th>
-      <th>1/conc</th>
-      <th>ln conc</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0.50</td>
-      <td>2.741794</td>
-      <td>0.364725</td>
-      <td>1.008612</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>0.75</td>
-      <td>2.621148</td>
-      <td>0.381512</td>
-      <td>0.963612</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1.00</td>
-      <td>2.505811</td>
-      <td>0.399072</td>
-      <td>0.918612</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2.00</td>
-      <td>2.093029</td>
-      <td>0.477776</td>
-      <td>0.738612</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>4.00</td>
-      <td>1.460257</td>
-      <td>0.684811</td>
-      <td>0.378612</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>6.00</td>
-      <td>1.018787</td>
-      <td>0.981560</td>
-      <td>0.018612</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>9.00</td>
-      <td>0.593696</td>
-      <td>1.684363</td>
-      <td>-0.521388</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   time (min)  conc (mM)    1/conc   ln conc
+0        0.50   2.741794  0.364725  1.008612
+1        0.75   2.621148  0.381512  0.963612
+2        1.00   2.505811  0.399072  0.918612
+3        2.00   2.093029  0.477776  0.738612
+4        4.00   1.460257  0.684811  0.378612
+5        6.00   1.018787  0.981560  0.018612
+6        9.00   0.593696  1.684363 -0.521388
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="two-plots-in-one-figure">
 <h2>Two Plots in One Figure<a class="headerlink" href="#two-plots-in-one-figure" title="Permalink to this headline">¶</a></h2>
-<p>The <em>Plotting Reaction Kinetics</em>  exercise used two <strong>separate</strong> plots and gave a clear answer. You could have stopped there. But let us learn a little more about what the Matplotlib library can do for us. What if we wanted to present both plots <strong>side by side</strong>? To do this will will create a “<strong>figure</strong>” object with the <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> tools. Then we will add two separate “<strong>axes</strong>” (plots) into the figure.</p>
+<p>The <em>Plotting Reaction Kinetics</em>  exercise used two <strong>separate</strong> plots and gave a clear answer. You could have stopped there. But let us learn a little more about what the <em>MatPlotLib</em> library can do for us. What if we wanted to present both plots <strong>side by side</strong>? To do this will will create a “<strong>figure</strong>” object with the <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> tools. Then we will add two separate “<strong>axes</strong>” (plots) into the figure.</p>
 <p>So we will create a figure and drop the two plots previously presented above into it. Take note of the code below and try to see how this was accomplished.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -519,9 +468,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="more-sophisticated-plotting">
 <h2>More Sophisticated Plotting<a class="headerlink" href="#more-sophisticated-plotting" title="Permalink to this headline">¶</a></h2>
-<p>There are <strong>many settings</strong> for formatiing your plot and many ways control the Matplotlib system. Using the <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> sublibrary gives us a function-oriented system. Observe above how everything was a function (calling <code class="docutils literal notranslate"><span class="pre">Do_That(with_this,</span> <span class="pre">and_this)</span></code>) or assigments (<code class="docutils literal notranslate"><span class="pre">Do_That.setting</span> <span class="pre">=</span> <span class="pre">whatever</span></code>).</p>
-<p>Python is an <strong>object-oriented</strong> language and we have already seen how we can create an <strong>object</strong> with a function call and than have the object manipulate itself using “<strong>methods</strong>”. These are just functions built into the object that act on that object.  For example, we can create a wheel object using <code class="docutils literal notranslate"><span class="pre">circle</span> <span class="pre">=</span> <span class="pre">wheel()</span></code>. We called the wheel function that was designed to create objects that represent the wheel object.  We named our wheel object “circle”.  Now we can call any method whithin a wheel object named “circle” and <strong>change it</strong>.  For example, wheel objects contain the method <code class="docutils literal notranslate"><span class="pre">turn()</span></code>. If we state <code class="docutils literal notranslate"><span class="pre">circle.turn(90)</span></code> we might be turning the wheel object named “circle” by 90 degrees. It’s exactly the same as <code class="docutils literal notranslate"><span class="pre">circle</span> <span class="pre">=</span> <span class="pre">wheel.turn(circle,</span> <span class="pre">90)</span></code>.</p>
-<p>Consider the following code and observe how we create an object that is a <strong>figure</strong> and then creates two <strong>axes</strong> objects within it (these are the plots). We can manipulate each object by calling the methods that act on them. The result will be the same as in the above code but more options for styling are available this way.</p>
+<p>There are <strong>many settings</strong> for formatiing your plot and many ways control the <em>MatPlotLib</em> system. Using the <em>PyPlot</em> sublibrary gives us a function-oriented system. Observe above how everything was a function (calling <code class="docutils literal notranslate"><span class="pre">Do_That(with_this,</span> <span class="pre">and_this)</span></code>) or assigments (<code class="docutils literal notranslate"><span class="pre">Do_That.setting</span> <span class="pre">=</span> <span class="pre">whatever</span></code>).</p>
+<p><em>Python</em> is an <strong>object-oriented</strong> language and we have already seen how we can create an <strong>object</strong> with a function call and than have the object manipulate itself using “<strong>methods</strong>”. Methods are functions built into the object that act on that object. For example, we can create a wheel object using <code class="docutils literal notranslate"><span class="pre">circle</span> <span class="pre">=</span> <span class="pre">wheel()</span></code>. We called the wheel function that was designed to create objects that represent the wheel.  We named our wheel object “circle”.  Now we can call any wheel object method within “circle” and <strong>change it</strong>.  For example, wheel objects contain the method <code class="docutils literal notranslate"><span class="pre">turn()</span></code>. If we state <code class="docutils literal notranslate"><span class="pre">circle.turn(90)</span></code> we might be turning the wheel object named “circle” by 90 degrees. It’s exactly the same as <code class="docutils literal notranslate"><span class="pre">circle</span> <span class="pre">=</span> <span class="pre">wheel.turn(circle,</span> <span class="pre">90)</span></code>.</p>
+<p>Consider the following code and observe how we create an object that is a <strong>figure</strong> and then created two <strong>axes</strong> objects within it (these are the plots). We can manipulate each object by calling the methods that act upon them. The result will be the same as in the above code, but more options for styling are available this way.</p>
+<p>In the ned you will be best served by keeping things simple and using the same plkotting settings again and again. Choose your style and stick with it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># -------------------</span>
@@ -670,7 +620,7 @@ const thebe_selector_output = ".output, .cell_output"
           <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;ln conc&quot;</span><span class="p">,</span>                  <span class="c1"># y-axis label</span>
           <span class="n">xlabel</span><span class="o">=</span><span class="n">x_col_name</span><span class="p">,</span>                 <span class="c1"># x-axis label</span>
           <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span>                       <span class="c1"># x-axis limits</span>
-          <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">1.1</span><span class="p">])</span>                        <span class="c1"># y-axis limits</span>
+          <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">1.1</span><span class="p">])</span>                   <span class="c1"># y-axis limits</span>
 
 <span class="c1">#fig.savefig(&quot;my-first-figure2.pdf&quot;)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1097,7 +1047,7 @@ const thebe_selector_output = ".output, .cell_output"
     <a class='right-next' id="next-link" href="S3_Solving_Equations.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Solving Equations with SymPy</p>
+        <p class="prev-next-title">Solving Equations with <em>SymPy</em></p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

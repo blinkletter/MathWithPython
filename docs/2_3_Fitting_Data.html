@@ -96,7 +96,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="start.html">
-   Math with Python
+   Python and Chemistry
   </a>
  </li>
 </ul>
@@ -108,12 +108,18 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="1_1_Calculator.html">
-   Basic Math with Python
+   Basic Math with
+   <em>
+    Python
+   </em>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="1_2_Simple_Plots.html">
-   Making Plots Using Python
+   Making Plots Using
+   <em>
+    Python
+   </em>
   </a>
  </li>
 </ul>
@@ -130,12 +136,18 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2_2_Plotting_Data.html">
-   Pandas and Plotting Data
+   <em>
+    Pandas
+   </em>
+   and Plotting Data
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   SciPy and Fitting Data
+   <em>
+    SciPy
+   </em>
+   and Fitting Data
   </a>
  </li>
 </ul>
@@ -460,9 +472,9 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="scipy-and-fitting-data">
-<h1>SciPy and Fitting Data<a class="headerlink" href="#scipy-and-fitting-data" title="Permalink to this headline">¶</a></h1>
+<h1><em>SciPy</em> and Fitting Data<a class="headerlink" href="#scipy-and-fitting-data" title="Permalink to this headline">¶</a></h1>
 <p>We have plotted functions and plotted experimental data. How can we use both of these skills to <strong>interpret the results</strong> of our experiment? We could try plotting a function on the same plot as our data and changing the parameters of the function until it tracked closely to the data. This is called “<strong>optimization</strong>”. We could try to optimize the fit by eye, but there is a better way.</p>
-<p>We can use a computer to do all that work for us. There are many tools available. In this course we will use the tools contained in the <strong>SciPy</strong> library. This library provides tools for <strong>scientific computing</strong> and we will only use a small subset of its capabilities.</p>
+<p>We can use a computer to do all that work for us. There are many tools available. In this course we will use the tools contained in the <em><strong>SciPy</strong></em> library. This library provides tools for <strong>scientific computing</strong> and we will only use a small subset of its capabilities.</p>
 <div class="section" id="the-tools">
 <h2>The Tools<a class="headerlink" href="#the-tools" title="Permalink to this headline">¶</a></h2>
 <p>As always, we must begin by importing the <strong>tools</strong> that we will be using.</p>
@@ -533,9 +545,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Are we doomed? First we must understand the data by <strong>fitting it to a model</strong>. This looks like exponential growth (we know that living things follow this model when resources are unlimited) so let us model that hypothesis and see if it is a good fit. The formula for exponential growth of a disease is…</p>
 <div class="math notranslate nohighlight">
 \[\frac{Z_t}{Z_0}=e^{(r-1)t}\]</div>
-<p><span class="math notranslate nohighlight">\(\frac{Z_t}{Z_0} =\)</span> relative increase in zombie population <br>
-<span class="math notranslate nohighlight">\(r =\)</span> replication factor (r = 1 means balanced zombie production/destruction)<br>
-<span class="math notranslate nohighlight">\(t =\)</span> time</p>
+<p><span class="math notranslate nohighlight">\(\frac{Z_t}{Z_0}\)</span> = relative increase in zombie population <br>
+<em>r</em> = replication factor (r = 1 means balanced zombie production/destruction)<br>
+<em>t</em> = time</p>
 </div>
 <div class="section" id="linearizing-the-equation">
 <h2>Linearizing the Equation<a class="headerlink" href="#linearizing-the-equation" title="Permalink to this headline">¶</a></h2>
@@ -570,8 +582,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="fit-the-line">
 <h2>Fit the Line<a class="headerlink" href="#fit-the-line" title="Permalink to this headline">¶</a></h2>
-<p>We can then use the statistical tools in SciPy to perform a <strong>curve fit</strong> optimization. We will construct a line based on the parameters of the line fit and display it on the same plot as the data. <strong>Does it fit</strong>? We can also report <strong>statistical parameters</strong> based on the line fit to help us with that decision. We will not use any statistics other than the parameters for the fit itself in this example. Consider the following code and determine what each command accomplishes. Did the linearized data fit the <strong>linear function</strong>?</p>
-<p><strong>Note</strong>: The <code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit()</span></code> function returns a list that contains a list of parameters and a matrix for the covariance. The coefficients will follow the order that they are defined in the function used for the fit. See the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html">documentation</a> for more information.</p>
+<p>The statistical tools in <em>SciPy</em> can be used to perform a <strong>curve fit</strong> optimization. We will construct a <strong>line</strong> based on the parameters of the line fit and <strong>display</strong> that line on the same plot as the data. <strong>Does it fit</strong>? We can also report <strong>statistical parameters</strong> from the line fit calculation to help us with that decision. We will not use any statistics other than the parameters for the fit itself in this example. Consider the following code and determine what each command accomplishes. Did the linearized data fit the <strong>linear function</strong>?</p>
+<p><strong>Note</strong>: The <code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit()</span></code> function returns a list that contains a list of coefficients (your answers) and a matrix for the covariance (your statistical scores). The coefficients will follow the order that they are defined in the function used for the fit. See the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html">documentation</a> for more information.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">linear</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>      <span class="c1"># Define a linear function</span>
@@ -614,8 +626,8 @@ The intercept is -0.009 +/- 0.048
 </div>
 <div class="section" id="fit-the-line-with-linear-regression">
 <h2>Fit the Line with Linear Regression<a class="headerlink" href="#fit-the-line-with-linear-regression" title="Permalink to this headline">¶</a></h2>
-<p>In the above code we used the <code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit()</span></code> function to <strong>fit</strong> an arbitrary function to data. This is a <strong>general-purpose</strong> method and works with any function. You may be familiar with Microsoft Excel and the need to fit <strong>linear data</strong> (unless you want to bother with the solver system of Excel). Excel uses a <strong>linear regression</strong> method. It is exactly the same as a <strong>curve fit</strong> but assumes that the function is always a linear <span class="math notranslate nohighlight">\(y = mx + b\)</span> system.</p>
-<p><strong>SciPy</strong> has the same linear regression function. We can use the <code class="docutils literal notranslate"><span class="pre">scipy.stats.linregress()</span></code> function. We send it the x,y data and it returns an <strong>object</strong> that contains all the results, including standard <strong>statistical information</strong>. Consider the code below and examine the purpose of each command.</p>
+<p>In the above code we used the <code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit()</span></code> function to <strong>fit</strong> an arbitrary function to data. This is a <strong>general-purpose</strong> method and works with any function. You may be familiar with Microsoft <em>Excel</em> and the need to fit <strong>linear</strong> data (unless you want to bother with the <em>solver</em> system of <em>Excel</em>). <em>Excel</em> uses a <strong>linear regression</strong> method. It is exactly the same as a <strong>curve fit</strong> but assumes that the function is always a linear <em>y = mx + b</em> system.</p>
+<p><em><strong>SciPy</strong></em> has the same linear regression function. We can use the <code class="docutils literal notranslate"><span class="pre">scipy.stats.linregress()</span></code> function. We send it the <em>x,y</em> data and it returns an <strong>object</strong> that contains all the results, including standard <strong>statistical information</strong>. Consider the code below and examine the purpose of each command.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">xydata</span><span class="p">[</span><span class="s2">&quot;Days&quot;</span><span class="p">],</span> <span class="n">xydata</span><span class="p">[</span><span class="s2">&quot;LogZ&quot;</span><span class="p">]</span>
@@ -655,7 +667,7 @@ RSQ = 1.000
 <div class="section" id="fit-the-curve">
 <h2>Fit the Curve<a class="headerlink" href="#fit-the-curve" title="Permalink to this headline">¶</a></h2>
 <p>Linear fits are so “Excel”. We can <strong>fit the curve</strong> function itself without needing to linearize the data.  This is more broadly applicable. However, I do recommend linearizing where possible because a subtle curve in what is supposed to be a straight line <strong>stands out</strong> to our human brains. We would see clearly that, even though the fit is close, the model is wrong. We would not pick up that slight difference in fitting a curve (is it slightly too curved?) and would need to use statistical analysis to detect such a <strong>deviation from the model</strong> (such as plotting the residuals - which you should always do, even with linear plots.)</p>
-<p>All we have to do is use the <strong>exact same</strong> code block as above but with a different function. That is the power of these notebooks. <strong>Cut and paste</strong> is a useful tool here.</p>
+<p>All we have to do is use the <strong>exact same</strong> code block as above but with a different curve fit function. That is the power of these notebooks. <strong>Cut and paste</strong> is a useful tool here.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">curve</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">r</span><span class="p">):</span>      <span class="c1"># Define a linear function</span>
@@ -689,7 +701,7 @@ RSQ = 1.000
 </div>
 <div class="section" id="smoothing-the-curve">
 <h2>Smoothing the Curve<a class="headerlink" href="#smoothing-the-curve" title="Permalink to this headline">¶</a></h2>
-<p>Observe above that the curve is a <strong>series of straight lines</strong> connecting the data points calculated at the given values of the x-axis. To make a <strong>smooth curve</strong>, we should use many more points. We will make a set of x-values with 100 evenly spaced values between the minimum and miximum values of the data x-axis. Consider the following clode block and try to understand what each command does.</p>
+<p>Observe above that the curve is a <strong>series of straight lines</strong> connecting the data points calculated at the given values of the <em>x</em>-axis. To make a <strong>smooth curve</strong>, we should use many more points. We will make a set of <em>x</em>-values with 100 evenly spaced values between the minimum and maximum values of the data <em>x</em>-axis. Consider the following clode block and try to <strong>understand</strong> what each command does.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">curve</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">r</span><span class="p">):</span>                             <span class="c1"># Define a linear function</span>
@@ -738,8 +750,8 @@ RSQ = 0.9987
 </div>
 <div class="section" id="plotting-residuals">
 <h2>Plotting Residuals<a class="headerlink" href="#plotting-residuals" title="Permalink to this headline">¶</a></h2>
-<p>We can <strong>check the model</strong> by plotting the <strong>residuals</strong>. this is the difference between the experimental y-axis and the calculated y-axis from the fit to the model. <strong>Random error</strong> will be distributed evenly obove and below zero. A systematic mismatch between the model and the data should be evident as a detectable trend in the plot. If it deviates from a random cloud then we may need to <strong>revise our hypothesis</strong>.</p>
-<p>The plots below seems to have no systematic devation from <span class="math notranslate nohighlight">\(y = 0\)</span> other than random noise. A perfect fit.</p>
+<p>We can <strong>check the model</strong> by plotting the <strong>residuals</strong>. This is the difference between the experimental <em>y</em>-axis and the calculated <em>y</em>-axis from the fit to the model. <strong>Random error</strong> will be distributed evenly obove and below zero. A systematic mismatch between the model and the data should be evident as a detectable trend in the plot. If it deviates from a random cloud then we may need to <strong>revise our hypothesis</strong>.</p>
+<p>The plots below seems to have no systematic deviation from <em>y = 0</em> other than <strong>random noise</strong>. A perfect fit.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">residuals</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">y_calc</span><span class="p">)</span>
@@ -774,28 +786,29 @@ RSQ = 0.9987
 </div>
 <div class="section" id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
-<p>Our skills are complete. We can <strong>plot</strong> experimental data and <strong>fit</strong> that data to an arbitrary function. We can <strong>visualize</strong> the line fit and <strong>evaluate</strong> if our model is valid. We now have a block of code that can be cut and pasted for <strong>repurposing</strong> in our experimental analysis. Choose one of these code blocks and use it as a <strong>recipe</strong> for plotting your experimental data. Write once, use many times - that is the way of Python.</p>
+<p>Our skills are complete. We can <strong>plot</strong> experimental data and <strong>fit</strong> that data to an arbitrary function. We can <strong>visualize</strong> the line fit and <strong>evaluate</strong> if our model is valid. We now have a block of code that can be <strong>repurposed</strong> in our experimental analyses. Choose one of these code blocks and use it as a <strong>recipe</strong> for plotting your experimental data. Write once, use many times - that is the way of <em>Python</em>.</p>
 <div class="section" id="what-we-have-accomplished">
 <h3>What We Have Accomplished<a class="headerlink" href="#what-we-have-accomplished" title="Permalink to this headline">¶</a></h3>
-<p>The five workbooks in this series gave us an introduction to using <strong>NumPy</strong> with <strong>Python</strong> to give us a useful calculator; using <strong>Pandas</strong> to import and use data as data frames; using <strong>MatPlotLib</strong> to plot functions and experimental data; and using <strong>SciPy</strong> to optimize curve fits for model functions and to perform linear regression fits for linear functions.</p>
+<p>We have had an introduction to using <em><strong>NumPy</strong></em> with <em><strong>Python</strong></em> to give us a useful calculator; using <em><strong>Pandas</strong></em> to import and manipulate data as dataframes; using <em><strong>MatPlotLib</strong></em> to plot functions and experimental data; and using <em><strong>SciPy</strong></em> to optimize curve fits for model functions and to perform linear regression fits for linear functions.</p>
 </div>
 <div class="section" id="a-look-ahead">
 <h3>A Look Ahead<a class="headerlink" href="#a-look-ahead" title="Permalink to this headline">¶</a></h3>
-<p>As we proceed through <strong>exploring chemistry</strong> using data analysis we will see <strong>new tools</strong> and techniques introduced where appropriate. These will be useful and convenient but we can do everything in this course using nothing more that the tools that we have already presented. Python with NumPy, SciPy, Panda and MatPlotLib will be our <strong>toolbox</strong>. Let us move forward and continue to use data to understand chemical concepts whenever we can.</p>
+<p>As we proceed through <strong>exploring chemistry</strong> using data analysis, we will see <strong>new tools</strong> and techniques introduced where appropriate. These will be useful and convenient but we can do, everything in this course using nothing more that the tools that we have already presented. <em>Python</em> with <em>NumPy</em>, <em>SciPy</em>, <em>Pandas</em> and <em>MatPlotLib</em> will be our <strong>toolbox</strong>. Let us move forward and continue to use data to understand chemical concepts whenever we can.</p>
 </div>
 </div>
 <div class="section" id="resources">
 <h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>data file</strong> can be obtained from the resources section of the course <strong>moodle</strong> site. The contents of the file are displayed below so that you can make it yourself if you are unable to access moodle.</p>
 <p><strong>2_3_Data.txt</strong></p>
-<div class="highlight-Days,Zombies notranslate"><div class="highlight"><pre><span></span>0,1.00
-2,1.75
-7,8.13
-14,71.1
-17,165
-19,306
-21,521
-22,744
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Days</span><span class="p">,</span><span class="n">Zombies</span>
+<span class="mi">0</span><span class="p">,</span><span class="mf">1.00</span>
+<span class="mi">2</span><span class="p">,</span><span class="mf">1.75</span>
+<span class="mi">7</span><span class="p">,</span><span class="mf">8.13</span>
+<span class="mi">14</span><span class="p">,</span><span class="mf">71.1</span>
+<span class="mi">17</span><span class="p">,</span><span class="mi">165</span>
+<span class="mi">19</span><span class="p">,</span><span class="mi">306</span>
+<span class="mi">21</span><span class="p">,</span><span class="mi">521</span>
+<span class="mi">22</span><span class="p">,</span><span class="mi">744</span>
 </pre></div>
 </div>
 </div>
@@ -830,7 +843,7 @@ RSQ = 0.9987
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Pandas and Plotting Data</p>
+            <p class="prev-next-title"><em>Pandas</em> and Plotting Data</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="S1_Python_Instead_of_Excel.html" title="next page">

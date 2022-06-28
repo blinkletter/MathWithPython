@@ -96,7 +96,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="start.html">
-   Math with Python
+   Python and Chemistry
   </a>
  </li>
 </ul>
@@ -108,12 +108,18 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="1_1_Calculator.html">
-   Basic Math with Python
+   Basic Math with
+   <em>
+    Python
+   </em>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="1_2_Simple_Plots.html">
-   Making Plots Using Python
+   Making Plots Using
+   <em>
+    Python
+   </em>
   </a>
  </li>
 </ul>
@@ -130,12 +136,18 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2_2_Plotting_Data.html">
-   Pandas and Plotting Data
+   <em>
+    Pandas
+   </em>
+   and Plotting Data
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2_3_Fitting_Data.html">
-   SciPy and Fitting Data
+   <em>
+    SciPy
+   </em>
+   and Fitting Data
   </a>
  </li>
 </ul>
@@ -157,7 +169,10 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Solving Equations with SymPy
+   Solving Equations with
+   <em>
+    SymPy
+   </em>
   </a>
  </li>
 </ul>
@@ -169,7 +184,10 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="E1_The_ICE_Table_in_Python.html">
-   The ICE Table in Python
+   The ICE Table in
+   <em>
+    Python
+   </em>
   </a>
  </li>
  <li class="toctree-l1">
@@ -179,7 +197,10 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="E3_Order_of_Reaction_via_Python.html">
-   Order of Reaction via Python
+   Order of Reaction via
+   <em>
+    Python
+   </em>
   </a>
  </li>
 </ul>
@@ -294,9 +315,9 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#solving-for-x">
    Solving for
-   <span class="math notranslate nohighlight">
-    \(x\)
-   </span>
+   <em>
+    x
+   </em>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -347,9 +368,9 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#solving-for-x">
    Solving for
-   <span class="math notranslate nohighlight">
-    \(x\)
-   </span>
+   <em>
+    x
+   </em>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -382,12 +403,12 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="solving-equations-with-sympy">
-<h1>Solving Equations with SymPy<a class="headerlink" href="#solving-equations-with-sympy" title="Permalink to this headline">¶</a></h1>
-<p>The quadratic equation? We don’t need it anymore! We can solve <strong>symbolic math</strong> directly in Python. You don’t need to spend thousands of dollars a year for a license to a symbolic math system like Maple, Mathematica or MatLab. We can use <strong>free tools</strong> available through Python. Those expensive programs can do a lot, but Python can do enough.</p>
-<p>We will use the tools provided by the <strong>SymPy</strong> package. It provides functions and methods for manipulating <strong>equations</strong> that use symbolic <strong>variables</strong>, i.e. when <span class="math notranslate nohighlight">\(x\)</span> is an unknown. We have already introduced Python as a calculator and demonstrated graphs by plotting a set of y-values calculated from a set of x-values. The SymPy package also allows for more direct display of a plot of a function. We will start with finding the roots of a polynomial.</p>
+<h1>Solving Equations with <em>SymPy</em><a class="headerlink" href="#solving-equations-with-sympy" title="Permalink to this headline">¶</a></h1>
+<p>The quadratic equation? We don’t need it anymore! We can solve <strong>symbolic math</strong> directly in <em>Python</em>. You don’t need to spend thousands of dollars a year for a license to a symbolic math system like <em>Maple</em>, <em>Mathematica</em> or <em>MatLab</em>. We can use <strong>free tools</strong> available through <em>Python</em>. Those expensive programs can do a lot, but <em>Python</em> can do enough.</p>
+<p>We will use the tools provided by the <em><strong>SymPy</strong></em> package. It provides functions and methods for manipulating <strong>equations</strong> that use symbolic <strong>variables</strong>, i.e. when <em>x</em> is an unknown. We have already introduced <em>Python</em> as a calculator and demonstrated graphs by plotting a series of <em>y</em>-values calculated from a series of <em>x</em>-values. The <em>SymPy</em> package also allows for more direct display of a plot of a function. We will start with finding the roots of a polynomial.</p>
 <div class="section" id="defining-variables">
 <h2>Defining Variables<a class="headerlink" href="#defining-variables" title="Permalink to this headline">¶</a></h2>
-<p>An unknown variable in SymPy is <strong>represented</strong> by a “symbol”. We represent concepts with symbols and play with them. That’s <strong>real math</strong>, everything else is accounting. Consider the following code and figure out what each command does. Here we solve the mystery of <span class="math notranslate nohighlight">\(x+1=0\)</span>. What is <span class="math notranslate nohighlight">\(x\)</span>?</p>
+<p>An unknown variable in <em>SymPy</em> is <strong>represented</strong> by a “symbol”. We represent concepts with symbols and play with them. That’s <strong>real math</strong>, everything else is accounting. Consider the following code and figure out what each command does. Here we solve the mystery of <em>x + 1 = 0</em>. What is <em>x</em>?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
@@ -399,8 +420,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="solving-for-x">
-<h2>Solving for <span class="math notranslate nohighlight">\(x\)</span><a class="headerlink" href="#solving-for-x" title="Permalink to this headline">¶</a></h2>
-<p>We can use the symbol <span class="math notranslate nohighlight">\(x\)</span> in an expression and then <strong>solve</strong> for <span class="math notranslate nohighlight">\(x\)</span> using SymPy. No algebra needed. Although, without at least some algebra inside you, you will never know if the answer is reasonable.</p>
+<h2>Solving for <em>x</em><a class="headerlink" href="#solving-for-x" title="Permalink to this headline">¶</a></h2>
+<p>We can use the symbol <span class="math notranslate nohighlight">\(x\)</span> in an expression and then <strong>solve</strong> for <em>x</em> using <em>SymPy</em>. No algebra needed. Although, without at least some algebra inside you, you will never know if the answer is reasonable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
@@ -426,10 +447,10 @@ The first item in the list is: -1
 </div>
 <div class="section" id="roots-of-polynomials">
 <h2>Roots of Polynomials<a class="headerlink" href="#roots-of-polynomials" title="Permalink to this headline">¶</a></h2>
-<p>Now let us <strong>solve</strong> the following equality. At what values of x is the following true?</p>
+<p>Now let us <strong>solve</strong> the following equality. At what values of <em>x</em> is the following true?</p>
 <div class="math notranslate nohighlight">
 \[x+5 = 3x^2+2\]</div>
-<p>First we get everything over to one side so that we have an equation that equals zero and then we can use the quadratic equation. Not! We will just <strong>solve the polynomial</strong> directly using the solvers sublibrary of SymPy.</p>
+<p>First we get everything over to one side so that we have an equation that equals zero and then we can use the quadratic equation. Not! We will just <strong>solve the polynomial</strong> directly using the solvers sublibrary of <em>SymPy</em>.</p>
 <div class="math notranslate nohighlight">
 \[-3x^2+x+3 = 0\]</div>
 <p>First we can <strong>define a variable</strong> that represents the expression above.</p>
@@ -445,7 +466,7 @@ The first item in the list is: -1
 \[\displaystyle - 3 x^{2} + x + 3\]</div>
 </div>
 </div>
-<p>Applying the <code class="docutils literal notranslate"><span class="pre">solve()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">sympy.solvers</span></code> subpackage to the expression will give a list of solutions for the symbol <span class="math notranslate nohighlight">\(x\)</span>. See the <a class="reference external" href="https://docs.sympy.org/latest/modules/solvers/solvers.html">documentation</a> for more information. SymPy will produce <strong>exact solutions</strong>. For example, <span class="math notranslate nohighlight">\(\sqrt{2}\)</span>  is not 1.4142135623730951. The decimals never really end. One is exact, the other is <strong>approximate</strong>, no matter for how long the digits flow.</p>
+<p>Applying the <code class="docutils literal notranslate"><span class="pre">solve()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">sympy.solvers</span></code> subpackage to the expression will give a list of solutions for the symbol <em>x</em>. See the <a class="reference external" href="https://docs.sympy.org/latest/modules/solvers/solvers.html">documentation</a> for more information. <em>SymPy</em> will produce <strong>exact solutions</strong>. For example, <span class="math notranslate nohighlight">\(\sqrt{2}\)</span>  is not 1.4142135623730951. The decimals never really end. One is exact, the other is <strong>approximate</strong>, no matter for how long the digits flow.</p>
 <p>Observe the code below and infer what the commands do. In the <strong>first</strong> line we create the list of solutions. In the <strong>second</strong> line we print the list. In the <strong>third</strong> line we address the zeroeth item in the list and apply a floating point evaluation. In the <strong>fourth</strong> line we obtain the floating point approximation of the item in the #1 position in the list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -475,7 +496,7 @@ The second evaluates to approx. x = 1.18046042171637
 </div>
 <div class="section" id="exploring-the-results">
 <h2>Exploring the Results<a class="headerlink" href="#exploring-the-results" title="Permalink to this headline">¶</a></h2>
-<p>If we <strong>substitute</strong> either of the exact solutions back into the expression it should evaluate to zero. However <span class="math notranslate nohighlight">\(\sqrt{37}\)</span> will not evaluate to an exact number. SymPy will do its best, but we see below that the evaluation comes very close but not exactly to zero (although <span class="math notranslate nohighlight">\(0.0 \times 10^{-124}\)</span> seems pretty close to zero to me). We can <strong>expand</strong> the substituted expression with the <code class="docutils literal notranslate"><span class="pre">sympy.expand()</span></code> function.  This will apply the rules of algebra to the exact result and calculate the symbolic answer, which is exactly zero.</p>
+<p>If we <strong>substitute</strong> either of the exact solutions back into the expression it should evaluate to zero. However <span class="math notranslate nohighlight">\(\sqrt{37}\)</span> will not evaluate to an exact number. <em>SymPy</em> will do its best. We see below that the evaluation comes very close, but not exactly, to zero (although 0.0 × 10<sup>–124</sup> seems pretty close to zero to me). We can <strong>expand</strong> the substituted expression with the <code class="docutils literal notranslate"><span class="pre">sympy.expand()</span></code> function.  This will apply the rules of algebra to the exact result and calculate the symbolic answer, which is exactly zero.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;One of the solutions to 0 =&quot;</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span><span class="s2">&quot;is...&quot;</span><span class="p">)</span>
@@ -513,8 +534,8 @@ we find that x = 0 exactly.
 </div>
 <div class="section" id="plotting-the-expression">
 <h2>Plotting the Expression<a class="headerlink" href="#plotting-the-expression" title="Permalink to this headline">¶</a></h2>
-<p>We can <strong>visualize</strong> the solutions for the expression by plotting. We can observe the roots as x-axis intercepts.</p>
-<p>Consider the following code blocks. In the <strong>first</strong> we show how simple it is to get a quick plot. In the <strong>second</strong> we add features that provide control of the style. Go back and <strong>change</strong> the expression to something else. Try <span class="math notranslate nohighlight">\((x+\sqrt{2})^2+9=3x^2+9x\)</span>. Execute the code blocks in order and <strong>see what happens</strong>.</p>
+<p>We can <strong>visualize</strong> the solutions for the expression by plotting. We can observe the roots as <em>x</em>-axis intercepts.</p>
+<p>Consider the following code blocks. In the <strong>first</strong>, we show how simple it is to get a quick plot. In the <strong>second</strong>, we add features that provide control of the style. Go back and <strong>change</strong> the expression to something else. Try <span class="math notranslate nohighlight">\((x+\sqrt{2})^2+9=3x^2+9x\)</span>. Execute the code blocks in order and <strong>see what happens</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">sympy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">9</span> <span class="o">-</span> <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">9</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
@@ -562,7 +583,7 @@ we find that x = 0 exactly.
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/S3_Solving_Equations_13_0.png" src="_images/S3_Solving_Equations_13_0.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x106903220&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;sympy.plotting.plot.Plot at 0x112a34310&gt;
 </pre></div>
 </div>
 </div>
@@ -593,7 +614,7 @@ we find that x = 0 exactly.
 </div>
 <div class="section" id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
-<p>We can <strong>define</strong> an expression using symbolic math and <strong>solve</strong> that expression using symbolic algebra. We can obtain <strong>exact</strong> algebraic solutions and also their floating point <strong>estimates</strong>. We can solve an expression that equates to zero. We can apply the rules of algebra to expand terms to obtain the exact <strong>algebraic solution</strong>. There are many other tools within SymPy to explore. See the <a class="reference external" href="https://docs.sympy.org/latest/index.html">documentation</a> for details.</p>
+<p>We can <strong>define</strong> an expression using symbolic math and <strong>solve</strong> that expression using symbolic algebra. We can obtain <strong>exact</strong> algebraic solutions and also their floating point <strong>estimates</strong>. We can solve an expression that equates to zero. We can apply the rules of algebra to expand terms to obtain the exact <strong>algebraic solution</strong>. There are many other tools within <em>SymPy</em> to explore. See the <a class="reference external" href="https://docs.sympy.org/latest/index.html">documentation</a> for details.</p>
 </div>
 </div>
 
@@ -632,7 +653,7 @@ we find that x = 0 exactly.
     <a class='right-next' id="next-link" href="E1_The_ICE_Table_in_Python.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">The ICE Table in Python</p>
+        <p class="prev-next-title">The ICE Table in <em>Python</em></p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

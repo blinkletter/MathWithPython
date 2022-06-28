@@ -96,7 +96,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="start.html">
-   Math with Python
+   Python and Chemistry
   </a>
  </li>
 </ul>
@@ -108,12 +108,18 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="1_1_Calculator.html">
-   Basic Math with Python
+   Basic Math with
+   <em>
+    Python
+   </em>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="1_2_Simple_Plots.html">
-   Making Plots Using Python
+   Making Plots Using
+   <em>
+    Python
+   </em>
   </a>
  </li>
 </ul>
@@ -130,12 +136,18 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2_2_Plotting_Data.html">
-   Pandas and Plotting Data
+   <em>
+    Pandas
+   </em>
+   and Plotting Data
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2_3_Fitting_Data.html">
-   SciPy and Fitting Data
+   <em>
+    SciPy
+   </em>
+   and Fitting Data
   </a>
  </li>
 </ul>
@@ -157,7 +169,10 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="S3_Solving_Equations.html">
-   Solving Equations with SymPy
+   Solving Equations with
+   <em>
+    SymPy
+   </em>
   </a>
  </li>
 </ul>
@@ -169,7 +184,10 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   The ICE Table in Python
+   The ICE Table in
+   <em>
+    Python
+   </em>
   </a>
  </li>
  <li class="toctree-l1">
@@ -179,7 +197,10 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="E3_Order_of_Reaction_via_Python.html">
-   Order of Reaction via Python
+   Order of Reaction via
+   <em>
+    Python
+   </em>
   </a>
  </li>
 </ul>
@@ -400,11 +421,11 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="the-ice-table-in-python">
-<h1>The ICE Table in Python<a class="headerlink" href="#the-ice-table-in-python" title="Permalink to this headline">¶</a></h1>
-<p>We often can determine the <strong>final concentrations</strong> of a system using the initial concentrations and the equilibrium constant, <span class="math notranslate nohighlight">\(K_{eq}\)</span>. You will be familiar with the <strong>ICE table</strong> method, which helps us to set up the equations. Let us use the example of a weak acid.</p>
+<h1>The ICE Table in <em>Python</em><a class="headerlink" href="#the-ice-table-in-python" title="Permalink to this headline">¶</a></h1>
+<p>We often can determine the <strong>final concentrations</strong> of a system using the initial concentrations and the equilibrium constant, <em>K<sub>eq</sub></em>. You will be familiar with the <strong>ICE table</strong> method, which helps us to set up the equations. Let us use the example of a weak acid.</p>
 <div class="section" id="weak-acid-equilibrium">
 <h2>Weak Acid Equilibrium<a class="headerlink" href="#weak-acid-equilibrium" title="Permalink to this headline">¶</a></h2>
-<p>When we <strong>add</strong> <span class="math notranslate nohighlight">\(0.1 g\)</span> of acetic acid to <span class="math notranslate nohighlight">\(100 mL\)</span> of pure water, what is the resulting <span class="math notranslate nohighlight">\(pH\)</span>? We can <strong>solve</strong> this problem with a pad of paper and a calculator or we can build a notebook that can be reused again and again. Consider the code below.</p>
+<p>When we <strong>add</strong> 0.1 <em>g</em> of acetic acid to 100 <em>mL</em> of pure water, what is the resulting <em>pH</em>? We can <strong>solve</strong> this problem with a pad of paper and a calculator or we can build a notebook that can be reused again and again. Consider the code below.</p>
 <div class="section" id="start-with-the-facts">
 <h3>Start With the Facts<a class="headerlink" href="#start-with-the-facts" title="Permalink to this headline">¶</a></h3>
 <p>First we define some <strong>variables</strong> and constants. If we want to reuse this notebook for another monoprotic <strong>weak acid</strong>, we could do so by changing only this section.</p>
@@ -453,7 +474,7 @@ The Ka of the acid:
 \[[AcOH]_0 = some value\]</div>
 <div class="math notranslate nohighlight">
 \[[AcO^-]\:and\:[H^+] = 0\]</div>
-<p>The <strong>change</strong> in the concentrations as the reaction moves forward is represented by the symbol <span class="math notranslate nohighlight">\(x\)</span>. We can say that the new concentrations will be…</p>
+<p>The <strong>change</strong> in the concentrations as the reaction moves forward is represented by the symbol <em>x</em>. We can say that the new concentrations will be…</p>
 <div class="math notranslate nohighlight">
 \[[AcOH]_{eq} = some value-x\]</div>
 <div class="math notranslate nohighlight">
@@ -467,7 +488,7 @@ The Ka of the acid:
 </div>
 <div class="section" id="using-sympy">
 <h3>Using SymPy<a class="headerlink" href="#using-sympy" title="Permalink to this headline">¶</a></h3>
-<p>We need to solve for <span class="math notranslate nohighlight">\(x\)</span>. SymPy will do all the hard work.</p>
+<p>We need to solve for <em>x</em>. <em>SymPy</em> will do all the hard work.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
@@ -551,7 +572,7 @@ pH = 2.745699665415787
 </div>
 <div class="section" id="styling-printouts-of-numbers">
 <h3>Styling Printouts of Numbers<a class="headerlink" href="#styling-printouts-of-numbers" title="Permalink to this headline">¶</a></h3>
-<p>You can decide how many <strong>significant figures</strong> to use when you write down the result above. But you can build it right into your print commands using the <code class="docutils literal notranslate"><span class="pre">.format()</span></code> method for Python text strings. Consider the following code. The {:.3} is the placeholder in the string where the format method will place a <strong>formatted</strong> number, the “:” indicates that the number should not be padded with zeros and the “.4” means 4 decimal places.</p>
+<p>You can decide how many <strong>significant figures</strong> to use when you write down the result above. But you can build it right into your print commands using the <code class="docutils literal notranslate"><span class="pre">.format()</span></code> method for <em>Python</em> text strings. Consider the following code. The {:.3} is the placeholder in the string where the format method will place a <strong>formatted</strong> number, the “:” indicates that the number should not be padded with zeros and the “.4” means 4 decimal places.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
@@ -602,7 +623,7 @@ pH = 2.75
 </div>
 <div class="section" id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
-<p>We can now <strong>calculate</strong> the <span class="math notranslate nohighlight">\(pH\)</span> of a solution of a weak acid given an amount of acid, the volume and the <span class="math notranslate nohighlight">\(pK_a\)</span> value for the weak acid. We can <strong>change</strong> the values in the first block and then execute the notebook code to get to the final answer. We will never need to do math again (except on the test and final exam, so don’t get too lazy).</p>
+<p>We can now <strong>calculate</strong> the <em>pH</em> of a solution of a weak acid given an amount of acid, the volume and the <em>pK<sub>a</sub></em> value for the weak acid. We can <strong>change</strong> the values in the first block and then execute the notebook code to get to the final answer. We will never need to do math again (except on the test and final exam, so don’t get too lazy).</p>
 </div>
 </div>
 
@@ -635,7 +656,7 @@ pH = 2.75
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Solving Equations with SymPy</p>
+            <p class="prev-next-title">Solving Equations with <em>SymPy</em></p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="E2_Plotting_Reaction_Kinetics_to_Determine_Order.html" title="next page">

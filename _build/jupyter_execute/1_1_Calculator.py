@@ -1,15 +1,15 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Basic Math with Python
-# We will be using **Python** in this course. The goal is to develop a single tool as a useful resource for interpreting experimental results and solving all sorts of problems. This is not about programming. Will will not be writing programs. We will be issuing **commands** to our loyal computer and making it do all the hard work for us.
+# # Basic Math with *Python*
+# We will be using ***Python*** in this course. The goal is to develop a single tool as a useful resource for interpreting experimental results and solving all sorts of problems. This is not about programming. Will will not be writing programs. We will be issuing **commands** to our loyal computer and making it do all the hard work for us.
 # 
-# You can **download** the Jupyter notebook for this chapter by using the link at the top.
+# All of the chapters in this book are **interactive *Python* notebooks** that have been **converted** to web pages. Please **download** the original notebooks using the link at the top if this page and follow along.
+# 
 
 # ## A calculator
-# All of the chapters in this book are **interactive Python notebooks** that have been **converted** to web pages.What you see below is like a printout of the book. Please **download** the original notebook using the link at the top if this page and follow along.
 # 
-# We can use this interactive Python notebook as a **calculator**. The result of the last command in any code block, such as the one below, will be displayed. We can display the contects of a variable simply by stating it. We can also use a `print()` function to output information. **Explore** the three code blocks below.
+# We can use this interactive *Python* notebook as a **calculator**. The output of the last command in any code block, such as the one below, will be displayed. We can display the contects of a variable simply by stating it as the last command. We can also use a `print()` function to output information. **Explore** the three code blocks below.
 
 # In[1]:
 
@@ -47,14 +47,15 @@ print("Each person must chip in", per_person, "dollars")      # What each of us 
 
 
 # ## Reduce, Reuse and Recycle
-# Examine the code blocks above. You could easily **change the values**, the tax rate or the number of people and repeat the calculation quickly. Each of these code blocks is a calculator designed for a purpose. Changing an input will change the result.  You don't need to start from scratch if you want to tip 15% instead of 20%, you just change the one value and execute the code.
+# 
+# Examine the code blocks above. You could easily **change the values**, the tax rate or the number of people and **repeat** the calculation quickly. Each of these code blocks is a calculator designed for a purpose. Changing an input will change the result.  You don't need to start from scratch if you want to tip 15% instead of 20%, you just **change** the one value and **execute** the code.
 # 
 # Try changing some values and seeing what happense. Use **\[shift\]\[return\]** to execute the code block.
 
-# ## More Math with NumPy
-# Python is a **simple** language. It has built-in functions for the basics but needs help with functions like sine and $e^x$. The NumPy library has many mathematical functions. It is a mainstay of scientific computation. First we will **import** the library as shown below. Then we will use some of the available tools to demonstrate **trigonometry** and to calculate **exponetial growth** of my investment profolio. Examine the code blocks below and see how we use the tools contained inside the NumPy library.
+# ## More Math with *NumPy*
+# *Python* is a **simple** language. It has built-in functions for the basics, but needs help with functions like sine and *e*<sup>x</sup>. The ***NumPy*** library has many mathematical functions. It is a mainstay of scientific computation. First we will **import** the library as shown below. Then we will use some of the available tools to demonstrate **trigonometry** and to calculate **exponential growth** of my investment profolio. Examine the code blocks below and see how we use the tools contained inside the *NumPy* library.
 # 
-# Observe that we have named the NumPy library that we imported as `np`. This is for convenience (less typing). `np` is now an **object** that contains all the tools of NumPy. To use a function within the library we call it as an extension to the library object. e.g. `np.exp(7)` is a function from NumPy that will give us the exponent of seven or $e^{7}$.
+# Observe that we have named the *NumPy* library that we imported as `np`. This is for convenience (less typing). `np` is now an **object** that contains all the tools of *NumPy*. To use a function within the library we call it as an extension to the library object. e.g. `np.exp(7)` is a function from *NumPy* that will give us the exponent of seven or *e*<sup>7</sup>.
 
 # In[4]:
 
@@ -109,8 +110,8 @@ print("will result in",A,"dollars")
 # 
 # Change the values in the code block above and **see what happens**. Imagine different angles and distances in your tree measurement. Try comparing compound interest paid monthly with compound interest paid annually over 10 years. How much difference is there? Talk to your banker.
 
-# ## More NumPy Tools
-# There is much more to the NumPy library than we will ever use. Below are just a few examples of NumPy that we will use in this course.
+# ## More *NumPy* Tools
+# There is much more to the NumPy library than we will ever use. Below are just a few examples of *NumPy* that we will use in this course.
 
 # In[7]:
 
@@ -132,9 +133,9 @@ print("That would be", np.arccos(.707)/np.pi*180,"degrees.")
 
 
 # ## Tale of the Tape
-# One benefit of using an interactive Python notebook is that all your work remains there for you to examine. You will easily be able to **find and correct your error**. Just make the change in the existing code block and execute. Much like the old-fashioned paper tape machines, this calculator keeps a record of your work so you can check later.  
+# One benefit of using an interactive *Python* notebook is that all your work remains there for you to examine. You will easily be able to **find and correct your error**. Just make the change in the existing code block and execute. Much like the old-fashioned paper tape machines, this calculator keeps a record of your work so you can check later.  
 # ## Summary
-# We have learned how to perform **math operations** and used a math function from the **NumPy** library. We will see more examples of NumPy tools as we move forward. Don't worry, we won't need very many of them to handle chemistry.
+# We have learned how to perform **math operations** and used a math function from the ***NumPy*** library. We will see more examples of *NumPy* tools as we move forward. Don't worry, we won't need very many of them to handle chemistry.
 
 # In[ ]:
 

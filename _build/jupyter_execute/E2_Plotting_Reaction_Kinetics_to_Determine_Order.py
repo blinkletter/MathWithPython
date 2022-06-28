@@ -4,7 +4,7 @@
 # # Plotting Reaction Kinetics
 # **Reading** in data from a file and **plotting** the data is a useful way to quickly **evaluate an experiment**. We will imagine that our data is in a **file** called "E2_DataA.csv" that is located in the same directory as this notebook. In this example, we will examine concentration vs. time data for a reaction and quickly determine if the reaction is **first or second order**. No plotting **paper** for us, we are **digital**!
 # 
-# First we **load** up the **tools**. We will need tools from the Matplotlib.pyplot, NumPy and pandas packages.
+# First we **load** up the **tools**. We will need tools from the *MatPlotLib*, *NumPy* and *Pandas* packages.
 
 # In[1]:
 
@@ -16,7 +16,7 @@ from scipy import stats
 
 
 # ## Read the Data
-# We will read the file using the tools provided in the **pandas library**. The data file includes column **headers** in its first line. We will use the `read_csv()` function in pandas to create a **dataframe** object from the data file
+# We will read the file using the tools provided in the ***Pandas* library**. The data file includes column **headers** in its first line. We will use the `read_csv()` function in *Pandas* to create a **dataframe** object from the data file
 
 # In[2]:
 
@@ -28,7 +28,7 @@ print(df)
 # ## Make a Quick Plot
 # Let us plot the raw data and **check** it for any insanity. As you can see, it looks good. But is it a first order reaction or a second order reaction?
 # 
-# We can address the columns using their **names**. We can plot any two columns as x and y values. 
+# We can address the columns using their **names**. We can plot any two columns as *x* and *y* values. 
 
 # In[3]:
 
@@ -57,9 +57,9 @@ plt.show()
 
 
 # ## Decisions, Decisions
-# We know how to plot first and second order reactions as **linear plots**. So let us set that up and plot each case. If the line is linear for one of the plots then we have a match. Let us see if we can make a **decision**.
+# We know how to plot first and second-order reactions as **linear plots**. So let us set that up and plot each case. If the line is linear for one of the plots then we have a match. Let us see if we can make a **decision**.
 # 
-# For a **first order** reaction we have $\ln [A] = \ln [A]_0 - k \cdot t$ and plotting $\ln [A]_t$ vs. $time$ we will have a linear plot. However if the reaction is not first order then the line will curve. As we have seen, the integrated rate equation for **second order** is $\frac{1}{[A]}=\frac{1}{[A]_0} + k \cdot t$. So plotting $\frac{1}{[A]}$ vs. $t$
+# For a **first order** reaction we have $\ln [A] = \ln [A]_0 - k \cdot t$ and plotting $\ln [A]_t$ vs. $time$ we will have a linear plot. However if the reaction is not first order then the line will curve. As we have seen, the integrated rate equation for **second order** is $\frac{1}{[A]}=\frac{1}{[A]_0} + k \cdot t$. So plotting $\frac{1}{[A]}$ vs. $t$ will give a linear plot.
 
 # In[5]:
 
@@ -70,7 +70,7 @@ display(df)                             # a prettyprint command that makes Jupyt
 
 
 # ## Now, We Plot
-# We have all the information we need now.  Let us plot the **two cases** and see if either of them fit the linear equations for $1^{st}$ and $2^{nd}$ order reactions. Which **model** fits the data? Use the code below to plot each case and decide for yourself.
+# We have all the information we need now.  Let us plot the **two cases** and see if either of them fit the linear equations for 1<sup>st</sup> and 2<sup>nd</sup> order reactions. Which **model** fits the data? Use the code below to plot each case and decide for yourself.
 
 # In[6]:
 
@@ -111,7 +111,7 @@ plt.show()
 
 
 # ## Summary
-# We have seen how to **import** data from a data file and use the tools of a pandas **dataframe** to manipulate it. We have seen how to plot this data and also have been introduced to a handful of options for changing the appearance of the plots. There are many ways to change the **style** in plots. See the "Plotting in Python for Fun and Profit" notebook for a few more ideas on making plots fit your style.  
+# We have seen how to **import** data from a data file and use the tools of a *Pandas* **dataframe** to manipulate it. We have seen how to plot this data and also have been introduced to a handful of options for changing the appearance of the plots. There are many ways to change the **style** in plots.   
 
 # ## Resources
 # The **data file** can be obtained from the resources section of the course **moodle** site. The contents of the file are displayed below so that you can make it yourself if you are unable to access moodle.
