@@ -1,0 +1,669 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Math with Python &#8212; Python and Chemistry</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Making Plots Using Python" href="1_2_Simple_Plots.html" />
+    <link rel="prev" title="Python and Chemistry" href="start.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/Ouroboros-benzene.svg.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python and Chemistry</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="start.html">
+   Python and Chemistry
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Basic Skills
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Basic Math with
+   <em>
+    Python
+   </em>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_2_Simple_Plots.html">
+   Making Plots Using Python
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Interpretting Data
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_1_Better_Plots.html">
+   Making Better Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_2_Plotting_Data.html">
+   Pandas and Plotting Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_3_Fitting_Data.html">
+   SciPy and Fitting Data
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  More Skills
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="S1_Python_Instead_of_Excel.html">
+   Python vs. Microsoft Excel
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="S2_Styling_Plots.html">
+   Styling Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="S3_Solving_Equations.html">
+   Solving Equations with SymPy
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="E1_The_ICE_Table_in_Python.html">
+   The ICE Table in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="E2_Plotting_Reaction_Kinetics_to_Determine_Order.html">
+   Plotting Reaction Kinetics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="E3_Order_of_Reaction_via_Python.html">
+   Order of Reaction via Python
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/1_1_Calculator.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/blinkletter/MathWithPython"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/blinkletter/MathWithPython/issues/new?title=Issue%20on%20page%20%2F1_1_Calculator.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/blinkletter/MathWithPython/master?urlpath=tree/docs/1_1_Calculator.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-calculator">
+   A calculator
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reduce-reuse-and-recycle">
+   Reduce, Reuse and Recycle
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-math-with-numpy">
+   More Math with
+   <em>
+    NumPy
+   </em>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notes-on-the-math">
+     Notes on the Math
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#have-fun">
+     Have Fun
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-numpy-tools">
+   More
+   <em>
+    NumPy
+   </em>
+   Tools
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tale-of-the-tape">
+   Tale of the Tape
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Basic Math with Python</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-calculator">
+   A calculator
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reduce-reuse-and-recycle">
+   Reduce, Reuse and Recycle
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-math-with-numpy">
+   More Math with
+   <em>
+    NumPy
+   </em>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#notes-on-the-math">
+     Notes on the Math
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#have-fun">
+     Have Fun
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-numpy-tools">
+   More
+   <em>
+    NumPy
+   </em>
+   Tools
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tale-of-the-tape">
+   Tale of the Tape
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="basic-math-with-python">
+<h1>Basic Math with <em>Python</em><a class="headerlink" href="#basic-math-with-python" title="Permalink to this headline">¶</a></h1>
+<p>We will be using <em><strong>Python</strong></em> in this course. The goal is to develop a single tool as a useful resource for interpreting experimental results and solving all sorts of problems. This is not about programming. Will will not be writing programs. We will be issuing <strong>commands</strong> to our loyal computer and making it do all the hard work for us.</p>
+<p>All of the chapters in this book are <strong>interactive <em>Python</em> notebooks</strong> that have been <strong>converted</strong> to web pages. Please <strong>download</strong> the original notebooks using the link at the top if this page and follow along.</p>
+<div class="section" id="a-calculator">
+<h2>A calculator<a class="headerlink" href="#a-calculator" title="Permalink to this headline">¶</a></h2>
+<p>We can use this interactive <em>Python</em> notebook as a <strong>calculator</strong>. The output of the last command in any code block, such as the one below, will be displayed. We can display the contects of a variable simply by stating it as the last command. We can also use a <code class="docutils literal notranslate"><span class="pre">print()</span></code> function to output information. <strong>Explore</strong> the three code blocks below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">75.35</span> <span class="o">*</span> <span class="mf">1.15</span>          <span class="c1"># calculate the price with tax</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>86.65249999999999
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tax</span> <span class="o">=</span> <span class="mi">15</span>                       <span class="c1"># percent tax</span>
+<span class="n">tip</span> <span class="o">=</span> <span class="mi">20</span>                       <span class="c1"># percent tip (when did 20% become the norm?)</span>
+<span class="n">dinner_price</span> <span class="o">=</span> <span class="mf">68.85</span>           <span class="c1"># values are assigned to variables</span>
+
+<span class="n">dinner_with_tax</span> <span class="o">=</span> <span class="n">dinner_price</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">tax</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>   <span class="c1"># dinner cost with tax</span>
+<span class="n">tip_amount</span> <span class="o">=</span> <span class="n">dinner_price</span> <span class="o">*</span> <span class="p">(</span><span class="n">tip</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span>            <span class="c1"># tip calculated on price before tax (as it should be)</span>
+
+<span class="n">total_bill</span> <span class="o">=</span> <span class="n">dinner_with_tax</span> <span class="o">+</span> <span class="n">tip_amount</span>        <span class="c1"># calculate the total</span>
+
+<span class="n">total_bill</span>                                       <span class="c1"># display the contents of this variable</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>92.94749999999998
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_bill</span> <span class="o">=</span> <span class="mf">126.87</span>
+<span class="n">number_of_people</span> <span class="o">=</span> <span class="mi">6</span>                           <span class="c1"># we have set the values</span>
+
+<span class="n">per_person</span> <span class="o">=</span> <span class="n">total_bill</span> <span class="o">/</span> <span class="n">number_of_people</span>     <span class="c1"># here we do the math</span>
+<span class="n">per_person</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">per_person</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>              <span class="c1"># round the result to 2 decimal places</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The total bill was&quot;</span><span class="p">,</span> <span class="n">total_bill</span><span class="p">,</span> <span class="s2">&quot;dollars&quot;</span><span class="p">)</span>            <span class="c1"># output the results</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number_of_people</span><span class="p">,</span> <span class="s2">&quot;people were splitting the bill&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Each person must chip in&quot;</span><span class="p">,</span> <span class="n">per_person</span><span class="p">,</span> <span class="s2">&quot;dollars&quot;</span><span class="p">)</span>      <span class="c1"># What each of us must pay (no deadbeats allowed).</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The total bill was 126.87 dollars
+6 people were splitting the bill
+Each person must chip in 21.14 dollars
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="reduce-reuse-and-recycle">
+<h2>Reduce, Reuse and Recycle<a class="headerlink" href="#reduce-reuse-and-recycle" title="Permalink to this headline">¶</a></h2>
+<p>Examine the code blocks above. You could easily <strong>change the values</strong>, the tax rate or the number of people and <strong>repeat</strong> the calculation quickly. Each of these code blocks is a calculator designed for a purpose. Changing an input will change the result.  You don’t need to start from scratch if you want to tip 15% instead of 20%, you just <strong>change</strong> the one value and <strong>execute</strong> the code.</p>
+<p>Try changing some values and seeing what happense. Use <strong>[shift][return]</strong> to execute the code block.</p>
+</div>
+<div class="section" id="more-math-with-numpy">
+<h2>More Math with <em>NumPy</em><a class="headerlink" href="#more-math-with-numpy" title="Permalink to this headline">¶</a></h2>
+<p><em>Python</em> is a <strong>simple</strong> language. It has built-in functions for the basics, but needs help with functions like sine and <em>e</em><sup>x</sup>. The <em><strong>NumPy</strong></em> library has many mathematical functions. It is a mainstay of scientific computation. First we will <strong>import</strong> the library as shown below. Then we will use some of the available tools to demonstrate <strong>trigonometry</strong> and to calculate <strong>exponential growth</strong> of my investment profolio. Examine the code blocks below and see how we use the tools contained inside the <em>NumPy</em> library.</p>
+<p>Observe that we have named the <em>NumPy</em> library that we imported as <code class="docutils literal notranslate"><span class="pre">np</span></code>. This is for convenience (less typing). <code class="docutils literal notranslate"><span class="pre">np</span></code> is now an <strong>object</strong> that contains all the tools of <em>NumPy</em>. To use a function within the library we call it as an extension to the library object. e.g. <code class="docutils literal notranslate"><span class="pre">np.exp(7)</span></code> is a function from <em>NumPy</em> that will give us the exponent of seven or <em>e</em><sup>7</sup>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>                <span class="c1"># A library of math functions and data structures</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distance_from_tree</span> <span class="o">=</span> <span class="mf">30.0</span>                 <span class="c1"># I am standing 30 meters from a tree</span>
+<span class="n">angle_to_top_of_tree</span> <span class="o">=</span> <span class="mf">26.0</span>               <span class="c1"># I must aim a telecope upwards at this angle to site the top</span>
+
+<span class="n">height</span> <span class="o">=</span> <span class="n">distance_from_tree</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">angle_to_top_of_tree</span><span class="p">)</span>   <span class="c1"># calculate the height</span>
+<span class="n">height</span>                                                       <span class="c1"># display this value</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>35.362606626188395
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P</span> <span class="o">=</span> <span class="mi">10000</span>          <span class="c1"># starting ballance</span>
+<span class="n">rate</span> <span class="o">=</span> <span class="mi">5</span>           <span class="c1"># percent interest. (e.g. 3% per year)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">12</span>             <span class="c1"># number of payments per time period (e.g. compounded 12 times per year)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mi">10</span>             <span class="c1"># number of time periods (e.g. 10 years)</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">rate</span><span class="o">/</span><span class="mi">100</span>       <span class="c1"># true value of interest rate</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">P</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">r</span> <span class="o">/</span> <span class="n">N</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="n">N</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>  <span class="c1"># &quot;**&quot; means &quot;to the power of&quot;. (e.g. 10 squared is 10**2)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>    <span class="c1"># round to dollars and cents</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;An investment of&quot;</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="s2">&quot;dollars with &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;an interest rate of&quot;</span><span class="p">,</span> <span class="n">rate</span><span class="p">,</span><span class="s2">&quot;percent per year&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;compounded&quot;</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="s2">&quot;times per year for&quot;</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="s2">&quot;years&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;will result in&quot;</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="s2">&quot;dollars&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>An investment of 10000 dollars with 
+an interest rate of 5 percent per year
+compounded 12 times per year for 10 years
+will result in 16470.09 dollars
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="notes-on-the-math">
+<h3>Notes on the Math<a class="headerlink" href="#notes-on-the-math" title="Permalink to this headline">¶</a></h3>
+<p>From <strong>trigonometry</strong> we know that, in a right triangle, the ratio of the <strong>opposite</strong> side (height of the tree) to the <strong>adjacent</strong> side (distance from tree) is the tangent of the angle between the adjacent side and the <strong>hyponenuse</strong>. Below is that classic formula from high school trigonometry. If we know any two values, we can calculate the third.</p>
+<div class="math notranslate nohighlight">
+\[\tan(\theta) = \frac{opposite}{adjacent}\]</div>
+<p>The formula for <strong>compound interest</strong> is given below. Using this, you can plan your retirement (assuming you believe the lies they tell about stock market returns).</p>
+<div class="math notranslate nohighlight">
+\[ A = P \left(1+ \frac{r}{N} \right)^{N\cdot t} \]</div>
+<p><span class="math notranslate nohighlight">\(A =\)</span> final amount <br>
+<span class="math notranslate nohighlight">\(P =\)</span> original principal <br>
+<span class="math notranslate nohighlight">\(r =\)</span> interest rate per time period <br>
+<span class="math notranslate nohighlight">\(N =\)</span> number or payments per time period <br>
+<span class="math notranslate nohighlight">\(t =\)</span> number of time periods</p>
+</div>
+<div class="section" id="have-fun">
+<h3>Have Fun<a class="headerlink" href="#have-fun" title="Permalink to this headline">¶</a></h3>
+<p>Change the values in the code block above and <strong>see what happens</strong>. Imagine different angles and distances in your tree measurement. Try comparing compound interest paid monthly with compound interest paid annually over 10 years. How much difference is there? Talk to your banker.</p>
+</div>
+</div>
+<div class="section" id="more-numpy-tools">
+<h2>More <em>NumPy</em> Tools<a class="headerlink" href="#more-numpy-tools" title="Permalink to this headline">¶</a></h2>
+<p>There is much more to the NumPy library than we will ever use. Below are just a few examples of <em>NumPy</em> that we will use in this course.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  
+
+<span class="n">radius</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The value of pi is&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The area of the circle with a radius of&quot;</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="s2">&quot;is&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">radius</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The value of e is&quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">e</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The value of ln(e) is&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">e</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The ln of 10 is&quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The log of 10 is&quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;e to the power of 3 is&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The sine of pi radians is&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span><span class="s2">&quot;. It should be zero, shouldn&#39;t it?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The cosine of 45 degrees is&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">))</span>   <span class="c1"># we must always use radians</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;If the cosine is 0.707, the angle is&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="mf">.707</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="s2">&quot;radians&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That would be&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="mf">.707</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">180</span><span class="p">,</span><span class="s2">&quot;degrees.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The value of pi is 3.141592653589793
+The area of the circle with a radius of 3 is 28.274333882308138
+The value of e is 2.718281828459045
+The value of ln(e) is 1.0
+The ln of 10 is 2.302585092994046
+The log of 10 is 1.0
+e to the power of 3 is 20.085536923187668
+The sine of pi radians is 1.2246467991473532e-16 . It should be zero, shouldn&#39;t it?
+The cosine of 45 degrees is 0.7071067811865476
+If the cosine is 0.707, the angle is 0.2500480647935444 radians
+That would be 45.00865166283799 degrees.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="tale-of-the-tape">
+<h2>Tale of the Tape<a class="headerlink" href="#tale-of-the-tape" title="Permalink to this headline">¶</a></h2>
+<p>One benefit of using an interactive <em>Python</em> notebook is that all your work remains there for you to examine. You will easily be able to <strong>find and correct your error</strong>. Just make the change in the existing code block and execute. Much like the old-fashioned paper tape machines, this calculator keeps a record of your work so you can check later.</p>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>We have learned how to perform <strong>math operations</strong> and used a math function from the <em><strong>NumPy</strong></em> library. We will see more examples of <em>NumPy</em> tools as we move forward. Don’t worry, we won’t need very many of them to handle chemistry.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="start.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><em>Python</em> and Chemistry</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="1_2_Simple_Plots.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Making Plots Using Python</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Barry Linkletter<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

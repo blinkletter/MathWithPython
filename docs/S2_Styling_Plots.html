@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tufte.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -182,7 +183,10 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="E1_The_ICE_Table_in_Python.html">
-   The ICE Table in Python
+   The ICE Table in
+   <em>
+    Python
+   </em>
   </a>
  </li>
  <li class="toctree-l1">
@@ -192,7 +196,10 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="E3_Order_of_Reaction_via_Python.html">
-   Order of Reaction via Python
+   Order of Reaction via
+   <em>
+    Python
+   </em>
   </a>
  </li>
 </ul>
@@ -246,22 +253,6 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 
             <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/blinkletter/MathWithPython"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/blinkletter/MathWithPython/issues/new?title=Issue%20on%20page%20%2FS2_Styling_Plots.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
 
             <!-- Full screen (wrap in <a> to have style consistency -->
 
@@ -471,7 +462,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>There are <strong>many settings</strong> for formatiing your plot and many ways control the <em>MatPlotLib</em> system. Using the <em>PyPlot</em> sublibrary gives us a function-oriented system. Observe above how everything was a function (calling <code class="docutils literal notranslate"><span class="pre">Do_That(with_this,</span> <span class="pre">and_this)</span></code>) or assigments (<code class="docutils literal notranslate"><span class="pre">Do_That.setting</span> <span class="pre">=</span> <span class="pre">whatever</span></code>).</p>
 <p><em>Python</em> is an <strong>object-oriented</strong> language and we have already seen how we can create an <strong>object</strong> with a function call and than have the object manipulate itself using “<strong>methods</strong>”. Methods are functions built into the object that act on that object. For example, we can create a wheel object using <code class="docutils literal notranslate"><span class="pre">circle</span> <span class="pre">=</span> <span class="pre">wheel()</span></code>. We called the wheel function that was designed to create objects that represent the wheel.  We named our wheel object “circle”.  Now we can call any wheel object method within “circle” and <strong>change it</strong>.  For example, wheel objects contain the method <code class="docutils literal notranslate"><span class="pre">turn()</span></code>. If we state <code class="docutils literal notranslate"><span class="pre">circle.turn(90)</span></code> we might be turning the wheel object named “circle” by 90 degrees. It’s exactly the same as <code class="docutils literal notranslate"><span class="pre">circle</span> <span class="pre">=</span> <span class="pre">wheel.turn(circle,</span> <span class="pre">90)</span></code>.</p>
 <p>Consider the following code and observe how we create an object that is a <strong>figure</strong> and then created two <strong>axes</strong> objects within it (these are the plots). We can manipulate each object by calling the methods that act upon them. The result will be the same as in the above code, but more options for styling are available this way.</p>
-<p>In the ned you will be best served by keeping things simple and using the same plkotting settings again and again. Choose your style and stick with it.</p>
+<p>In the end you will be best served by keeping things simple and using the same plkotting settings again and again. Choose your style and stick with it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># -------------------</span>
@@ -1060,7 +1051,7 @@ const thebe_selector_output = ".output, .cell_output"
     
       By Barry Linkletter<br/>
     
-        &copy; Copyright 2021.<br/>
+        &copy; Copyright 2022.<br/>
   </p>
 </footer>
 </main>

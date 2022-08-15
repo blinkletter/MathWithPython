@@ -84,7 +84,7 @@ plt.show()                                   # each of the commands above modifi
 # 
 # Consider the following code and observe how we create an object that is a **figure** and then created two **axes** objects within it (these are the plots). We can manipulate each object by calling the methods that act upon them. The result will be the same as in the above code, but more options for styling are available this way.
 # 
-# In the ned you will be best served by keeping things simple and using the same plkotting settings again and again. Choose your style and stick with it.
+# In the end you will be best served by keeping things simple and using the same plkotting settings again and again. Choose your style and stick with it.
 
 # In[4]:
 
