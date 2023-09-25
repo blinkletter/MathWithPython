@@ -1,430 +1,390 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Basic Math with Python &#8212; Python and Chemistry</title>
-    
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/tufte.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '1_1_Calculator';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Making Plots Using Python" href="1_2_Simple_Plots.html" />
     <link rel="prev" title="Python and Chemistry" href="start.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="start.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/Ouroboros-benzene.svg.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Python and Chemistry</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="start.html">
-   Python and Chemistry
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Basic Skills
- </span>
-</p>
+    
+    
+    <img src="_static/Ouroboros-benzene.svg.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/Ouroboros-benzene.svg.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="start.html">
+                    Python and Chemistry
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Skills</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Basic Math with
-   <em>
-    Python
-   </em>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="1_2_Simple_Plots.html">
-   Making Plots Using
-   <em>
-    Python
-   </em>
-  </a>
- </li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Basic Math with <em>Python</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_2_Simple_Plots.html">Making Plots Using <em>Python</em></a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Interpretting Data
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interpretting Data</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="2_1_Better_Plots.html">
-   Making Better Plots
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="2_2_Plotting_Data.html">
-   <em>
-    Pandas
-   </em>
-   and Plotting Data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="2_3_Fitting_Data.html">
-   <em>
-    SciPy
-   </em>
-   and Fitting Data
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="2_1_Better_Plots.html">Making Better Plots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_2_Plotting_Data.html"><em>Pandas</em> and Plotting Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_3_Fitting_Data.html"><em>SciPy</em> and Fitting Data</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  More Skills
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">More Skills</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="S1_Python_Instead_of_Excel.html">
-   Python vs. Microsoft Excel
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="S2_Styling_Plots.html">
-   Styling Plots
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="S3_Solving_Equations.html">
-   Solving Equations with
-   <em>
-    SymPy
-   </em>
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="S1_Python_Instead_of_Excel.html">Python vs. Microsoft Excel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="S2_Styling_Plots.html">Styling Plots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="S3_Solving_Equations.html">Solving Equations with <em>SymPy</em></a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Exercises
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="E1_The_ICE_Table_in_Python.html">
-   The ICE Table in
-   <em>
-    Python
-   </em>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="E2_Plotting_Reaction_Kinetics_to_Determine_Order.html">
-   Plotting Reaction Kinetics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="E3_Order_of_Reaction_via_Python.html">
-   Order of Reaction via
-   <em>
-    Python
-   </em>
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="E1_The_ICE_Table_in_Python.html">The ICE Table in <em>Python</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="E2_Plotting_Reaction_Kinetics_to_Determine_Order.html">Plotting Reaction Kinetics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E3_Order_of_Reaction_via_Python.html">Order of Reaction via <em>Python</em></a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/1_1_Calculator.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/blinkletter/MathWithPython/master?urlpath=tree/docs/1_1_Calculator.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
         
-        
-        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-</div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
 
-        </div>
+<div class="article-header-buttons">
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-calculator">
-   A calculator
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reduce-reuse-and-recycle">
-   Reduce, Reuse and Recycle
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#more-math-with-numpy">
-   More Math with
-   <em>
-    NumPy
-   </em>
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#notes-on-the-math">
-     Notes on the Math
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#have-fun">
-     Have Fun
-    </a>
-   </li>
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/blinkletter/MathWithPython/blob/main/./1_1_Calculator.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#more-numpy-tools">
-   More
-   <em>
-    NumPy
-   </em>
-   Tools
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tale-of-the-tape">
-   Tale of the Tape
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
-  </a>
- </li>
-</ul>
+</div>
 
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/1_1_Calculator.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Basic Math with Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-calculator">A calculator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reduce-reuse-and-recycle">Reduce, Reuse and Recycle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-math-with-numpy">More Math with <em>NumPy</em></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notes-on-the-math">Notes on the Math</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#have-fun">Have Fun</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-numpy-tools">More <em>NumPy</em> Tools</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tale-of-the-tape">Tale of the Tape</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Basic Math with Python</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-calculator">
-   A calculator
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reduce-reuse-and-recycle">
-   Reduce, Reuse and Recycle
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#more-math-with-numpy">
-   More Math with
-   <em>
-    NumPy
-   </em>
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#notes-on-the-math">
-     Notes on the Math
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#have-fun">
-     Have Fun
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#more-numpy-tools">
-   More
-   <em>
-    NumPy
-   </em>
-   Tools
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tale-of-the-tape">
-   Tale of the Tape
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
-  </a>
- </li>
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="basic-math-with-python">
-<h1>Basic Math with <em>Python</em><a class="headerlink" href="#basic-math-with-python" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="basic-math-with-python">
+<h1>Basic Math with <em>Python</em><a class="headerlink" href="#basic-math-with-python" title="Permalink to this heading">#</a></h1>
 <p>We will be using <em><strong>Python</strong></em> in this course. The goal is to develop a single tool as a useful resource for interpreting experimental results and solving all sorts of problems. This is not about programming. Will will not be writing programs. We will be issuing <strong>commands</strong> to our loyal computer and making it do all the hard work for us.</p>
 <p>All of the chapters in this book are <strong>interactive <em>Python</em> notebooks</strong> that have been <strong>converted</strong> to web pages. Please <strong>download</strong> the original notebooks using the link at the top if this page and follow along.</p>
-<div class="section" id="a-calculator">
-<h2>A calculator<a class="headerlink" href="#a-calculator" title="Permalink to this headline">¶</a></h2>
+<section id="a-calculator">
+<h2>A calculator<a class="headerlink" href="#a-calculator" title="Permalink to this heading">#</a></h2>
 <p>We can use this interactive <em>Python</em> notebook as a <strong>calculator</strong>. The output of the last command in any code block, such as the one below, will be displayed. We can display the contects of a variable simply by stating it as the last command. We can also use a <code class="docutils literal notranslate"><span class="pre">print()</span></code> function to output information. <strong>Explore</strong> the three code blocks below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -481,14 +441,14 @@ Each person must chip in 21.14 dollars
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="reduce-reuse-and-recycle">
-<h2>Reduce, Reuse and Recycle<a class="headerlink" href="#reduce-reuse-and-recycle" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="reduce-reuse-and-recycle">
+<h2>Reduce, Reuse and Recycle<a class="headerlink" href="#reduce-reuse-and-recycle" title="Permalink to this heading">#</a></h2>
 <p>Examine the code blocks above. You could easily <strong>change the values</strong>, the tax rate or the number of people and <strong>repeat</strong> the calculation quickly. Each of these code blocks is a calculator designed for a purpose. Changing an input will change the result.  You don’t need to start from scratch if you want to tip 15% instead of 20%, you just <strong>change</strong> the one value and <strong>execute</strong> the code.</p>
 <p>Try changing some values and seeing what happense. Use <strong>[shift][return]</strong> to execute the code block.</p>
-</div>
-<div class="section" id="more-math-with-numpy">
-<h2>More Math with <em>NumPy</em><a class="headerlink" href="#more-math-with-numpy" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="more-math-with-numpy">
+<h2>More Math with <em>NumPy</em><a class="headerlink" href="#more-math-with-numpy" title="Permalink to this heading">#</a></h2>
 <p><em>Python</em> is a <strong>simple</strong> language. It has built-in functions for the basics, but needs help with functions like sine and <em>e</em><sup>x</sup>. The <em><strong>NumPy</strong></em> library has many mathematical functions. It is a mainstay of scientific computation. First we will <strong>import</strong> the library as shown below. Then we will use some of the available tools to demonstrate <strong>trigonometry</strong> and to calculate <strong>exponential growth</strong> of my investment profolio. Examine the code blocks below and see how we use the tools contained inside the <em>NumPy</em> library.</p>
 <p>Observe that we have named the <em>NumPy</em> library that we imported as <code class="docutils literal notranslate"><span class="pre">np</span></code>. This is for convenience (less typing). <code class="docutils literal notranslate"><span class="pre">np</span></code> is now an <strong>object</strong> that contains all the tools of <em>NumPy</em>. To use a function within the library we call it as an extension to the library object. e.g. <code class="docutils literal notranslate"><span class="pre">np.exp(7)</span></code> is a function from <em>NumPy</em> that will give us the exponent of seven or <em>e</em><sup>7</sup>.</p>
 <div class="cell docutils container">
@@ -541,8 +501,8 @@ will result in 16470.09 dollars
 </div>
 </div>
 </div>
-<div class="section" id="notes-on-the-math">
-<h3>Notes on the Math<a class="headerlink" href="#notes-on-the-math" title="Permalink to this headline">¶</a></h3>
+<section id="notes-on-the-math">
+<h3>Notes on the Math<a class="headerlink" href="#notes-on-the-math" title="Permalink to this heading">#</a></h3>
 <p>From <strong>trigonometry</strong> we know that, in a right triangle, the ratio of the <strong>opposite</strong> side (height of the tree) to the <strong>adjacent</strong> side (distance from tree) is the tangent of the angle between the adjacent side and the <strong>hyponenuse</strong>. Below is that classic formula from high school trigonometry. If we know any two values, we can calculate the third.</p>
 <div class="math notranslate nohighlight">
 \[\tan(\theta) = \frac{opposite}{adjacent}\]</div>
@@ -554,14 +514,14 @@ will result in 16470.09 dollars
 <span class="math notranslate nohighlight">\(r =\)</span> interest rate per time period <br>
 <span class="math notranslate nohighlight">\(N =\)</span> number or payments per time period <br>
 <span class="math notranslate nohighlight">\(t =\)</span> number of time periods</p>
-</div>
-<div class="section" id="have-fun">
-<h3>Have Fun<a class="headerlink" href="#have-fun" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="have-fun">
+<h3>Have Fun<a class="headerlink" href="#have-fun" title="Permalink to this heading">#</a></h3>
 <p>Change the values in the code block above and <strong>see what happens</strong>. Imagine different angles and distances in your tree measurement. Try comparing compound interest paid monthly with compound interest paid annually over 10 years. How much difference is there? Talk to your banker.</p>
-</div>
-</div>
-<div class="section" id="more-numpy-tools">
-<h2>More <em>NumPy</em> Tools<a class="headerlink" href="#more-numpy-tools" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="more-numpy-tools">
+<h2>More <em>NumPy</em> Tools<a class="headerlink" href="#more-numpy-tools" title="Permalink to this heading">#</a></h2>
 <p>There is much more to the NumPy library than we will ever use. Below are just a few examples of <em>NumPy</em> that we will use in this course.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -598,16 +558,16 @@ That would be 45.00865166283799 degrees.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="tale-of-the-tape">
-<h2>Tale of the Tape<a class="headerlink" href="#tale-of-the-tape" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="tale-of-the-tape">
+<h2>Tale of the Tape<a class="headerlink" href="#tale-of-the-tape" title="Permalink to this heading">#</a></h2>
 <p>One benefit of using an interactive <em>Python</em> notebook is that all your work remains there for you to examine. You will easily be able to <strong>find and correct your error</strong>. Just make the change in the existing code block and execute. Much like the old-fashioned paper tape machines, this calculator keeps a record of your work so you can check later.</p>
-</div>
-<div class="section" id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
 <p>We have learned how to perform <strong>math operations</strong> and used a math function from the <em><strong>NumPy</strong></em> library. We will see more examples of <em>NumPy</em> tools as we move forward. Don’t worry, we won’t need very many of them to handle chemistry.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -621,7 +581,7 @@ That would be 45.00865166283799 degrees.
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -629,44 +589,114 @@ That would be 45.00865166283799 degrees.
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="start.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><em>Python</em> and Chemistry</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="start.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><em>Python</em> and Chemistry</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="1_2_Simple_Plots.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="1_2_Simple_Plots.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Making Plots Using <em>Python</em></p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By Barry Linkletter<br/>
-    
-        &copy; Copyright 2022.<br/>
-  </p>
-</footer>
-</main>
-
-
       </div>
-    </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+</div>
 
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-calculator">A calculator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reduce-reuse-and-recycle">Reduce, Reuse and Recycle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-math-with-numpy">More Math with <em>NumPy</em></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notes-on-the-math">Notes on the Math</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#have-fun">Have Fun</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-numpy-tools">More <em>NumPy</em> Tools</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tale-of-the-tape">Tale of the Tape</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Barry Linkletter
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
