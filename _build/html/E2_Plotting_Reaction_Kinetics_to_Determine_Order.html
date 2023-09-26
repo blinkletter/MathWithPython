@@ -386,6 +386,9 @@ document.write(`
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+
+<span class="n">data_loc</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/blinkletter/MathWithPython/main/data/&quot;</span>  <span class="c1"># Data is on github</span>
+<span class="c1"># data_loc = &quot;data/&quot;   # Data is in same folder as notebook</span>
 </pre></div>
 </div>
 </div>
@@ -395,7 +398,7 @@ document.write(`
 <p>We will read the file using the tools provided in the <strong><em>Pandas</em> library</strong>. The data file includes column <strong>headers</strong> in its first line. We will use the <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> function in <em>Pandas</em> to create a <strong>dataframe</strong> object from the data file</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;E2_DataA.csv&quot;</span><span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="p">)</span> <span class="c1"># The fields are separated by commas.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_loc</span> <span class="o">+</span> <span class="s2">&quot;E2_dataA.csv&quot;</span><span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="p">)</span> <span class="c1"># The fields are separated by commas.</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>

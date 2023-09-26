@@ -395,6 +395,10 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>   <span class="c1">#import the pandas tools and rename the whole set as &quot;pd&quot;</span>
+
+
+<span class="n">data_loc</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/blinkletter/MathWithPython/main/data/&quot;</span>  <span class="c1"># Data is on github</span>
+<span class="c1"># data_loc = &quot;data/&quot;   # Data is in same folder as notebook</span>
 </pre></div>
 </div>
 </div>
@@ -485,7 +489,7 @@ C    3      6
 <p><code class="docutils literal notranslate"><span class="pre">pandas.read_csv</span></code> will assume the <strong>first line</strong> is the names of the <strong>data series</strong> (columns)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;E1_data.csv&quot;</span><span class="p">)</span>              <span class="c1"># pandas provides tools for reading files</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_loc</span> <span class="o">+</span> <span class="s2">&quot;E1_data.csv&quot;</span><span class="p">)</span>              <span class="c1"># pandas provides tools for reading files</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>                                        <span class="c1"># Report the dataframe object</span>
 </pre></div>
 </div>
@@ -508,7 +512,7 @@ C    3      6
 <p>The dataframe object contains <strong>columns and rows</strong> of data. A typical dataframe will have columns of data that are identified by the column heading and rows identified by an index (usually a range of numbers from zero to n-1). Let us import a data file called <code class="docutils literal notranslate"><span class="pre">data2.csv</span></code> that contains data for concentration over time in a <strong>first-order reaction</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;E1_data2.csv&quot;</span><span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># This data file uses tabs </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_loc</span> <span class="o">+</span> <span class="s2">&quot;E1_data2.csv&quot;</span><span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># This data file uses tabs </span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>                                                 <span class="c1"># Report the dataframe object</span>
 </pre></div>
 </div>

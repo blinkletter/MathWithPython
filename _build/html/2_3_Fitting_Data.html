@@ -399,6 +399,9 @@ document.write(`
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>                <span class="c1"># A library of math functions and data structure</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>               <span class="c1"># The dataframe and related methods and function.</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>   <span class="c1"># A library of plotting functions</span>
+
+<span class="n">data_loc</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/blinkletter/MathWithPython/main/data/&quot;</span>  <span class="c1"># Data is on github</span>
+<span class="c1"># data_loc = &quot;data/&quot;   # Data is in same folder as notebook</span>
 </pre></div>
 </div>
 </div>
@@ -411,14 +414,16 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read a data file. It should be in the same directory as this notebook</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Here is data read in from the data file as a data frame object&quot;</span><span class="p">)</span>
-<span class="n">xydata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;2_3_Data.txt&quot;</span><span class="p">)</span> 
+<span class="n">xydata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_loc</span> <span class="o">+</span> <span class="s2">&quot;2_3_Data.txt&quot;</span><span class="p">)</span> 
 <span class="nb">print</span><span class="p">(</span><span class="n">xydata</span><span class="p">)</span>                <span class="c1"># Print the data </span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Here is data read in from the data file as a data frame object
-   Days  Zombies
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   Days  Zombies
 0     0     1.00
 1     2     1.75
 2     7     8.13
@@ -713,7 +718,7 @@ RSQ = 0.9987
 <section id="resources">
 <h2>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">#</a></h2>
 <p>The <strong>data file</strong> can be obtained from the resources section of the course <strong>moodle</strong> site. The contents of the file are displayed below so that you can make it yourself if you are unable to access moodle.</p>
-<p><strong>2_3_Data.txt</strong></p>
+<p><strong>data/2_3_Data.txt</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Days</span><span class="p">,</span><span class="n">Zombies</span>
 <span class="mi">0</span><span class="p">,</span><span class="mf">1.00</span>
 <span class="mi">2</span><span class="p">,</span><span class="mf">1.75</span>

@@ -384,6 +384,9 @@ document.write(`
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+
+<span class="n">data_loc</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/blinkletter/MathWithPython/main/data/&quot;</span>  <span class="c1"># Data is on github</span>
+<span class="c1"># data_loc = &quot;data/&quot;   # Data is in same folder as notebook</span>
 </pre></div>
 </div>
 </div>
@@ -393,7 +396,7 @@ document.write(`
 <p>We will <strong>repeat</strong> the idea of plotting reaction kinetic data to determine order. Below is the code that does this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;S2_DataA.csv&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_loc</span> <span class="o">+</span> <span class="s2">&quot;S2_dataA.csv&quot;</span><span class="p">)</span>
 
 <span class="n">x_col_name</span><span class="p">,</span> <span class="n">y_col_name</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
 
@@ -582,10 +585,10 @@ document.write(`
 <span class="c1">#fig.draw_without_rendering()</span>
  
 <span class="k">for</span> <span class="n">tick</span> <span class="ow">in</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">):</span>       <span class="c1"># (&#39;minor&#39;, &#39;major&#39;, &#39;both&#39;)</span>
-    <span class="n">tick</span><span class="o">.</span><span class="n">set_fontname</span><span class="p">(</span><span class="s2">&quot;Times&quot;</span><span class="p">)</span>
+    <span class="n">tick</span><span class="o">.</span><span class="n">set_fontfamily</span><span class="p">(</span><span class="s2">&quot;serif&quot;</span><span class="p">)</span>
     <span class="n">tick</span><span class="o">.</span><span class="n">set_fontsize</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">tick</span> <span class="ow">in</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">get_yticklabels</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">):</span>       <span class="c1"># (&#39;minor&#39;, &#39;major&#39;, &#39;both&#39;)</span>
-    <span class="n">tick</span><span class="o">.</span><span class="n">set_fontname</span><span class="p">(</span><span class="s2">&quot;Times&quot;</span><span class="p">)</span>
+    <span class="n">tick</span><span class="o">.</span><span class="n">set_fontfamily</span><span class="p">(</span><span class="s2">&quot;serif&quot;</span><span class="p">)</span>
     <span class="n">tick</span><span class="o">.</span><span class="n">set_fontsize</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 
 <span class="c1">#fig.savefig(&quot;my-first-figure.pdf&quot;)</span>
@@ -594,7 +597,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/983995984102b983ef7df5b0c08a6b8dc65397fbdacc04b7e02c6f23bbe3de21.png" src="_images/983995984102b983ef7df5b0c08a6b8dc65397fbdacc04b7e02c6f23bbe3de21.png" />
+<img alt="_images/4f07fa3a87afe7d18dc97ecfee726f2e56df47a8f0bbfec33b5ac3d6009d67e6.png" src="_images/4f07fa3a87afe7d18dc97ecfee726f2e56df47a8f0bbfec33b5ac3d6009d67e6.png" />
 </div>
 </div>
 </section>
@@ -605,7 +608,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">x_col_name</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;ln conc&quot;</span><span class="p">]</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;S2_classic2.mplstyle&quot;</span><span class="p">)</span>        <span class="c1"># This is a stylesheet that I created.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="n">data_loc</span> <span class="o">+</span> <span class="s2">&quot;S2_classic2.mplstyle&quot;</span><span class="p">)</span>        <span class="c1"># This is a stylesheet that I created.</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span> <span class="p">,</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>  <span class="c1"># create objects for the figure and the plot</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s2">&quot;o-&quot;</span><span class="p">)</span>
