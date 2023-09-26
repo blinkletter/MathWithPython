@@ -21,25 +21,15 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-print("Here is my experimental data as two lists")
-x = [0,4,6,10,15,18]           # A list of 6 numbers
-y = [0,2.5,2.8,5.6,7.9,8.2 ]   # Another list of 6 numbers. Do they correlate to the first list?
-print("x values:",x)
-print("y-values:",y)
-print()
-                               # Read a data file. It should be in the same directory as this notebook
-print("Here is data read in from a data file as a data frame object")
-xydata = pd.read_csv(data_loc + "datafile.csv")
-display(xydata)                # Display is like print but uses the graphical features of this notebook
+df = pd.read_csv(data_loc + "E2_dataA.csv", delimiter = ",") # The fields are separated by commas.
+print(df)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mHTTPError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[2], line 9[0m
-[1;32m      7[0m                                [38;5;66;03m# Read a data file. It should be in the same directory as this notebook[39;00m
-[1;32m      8[0m [38;5;28mprint[39m([38;5;124m"[39m[38;5;124mHere is data read in from a data file as a data frame object[39m[38;5;124m"[39m)
-[0;32m----> 9[0m xydata [38;5;241m=[39m pd[38;5;241m.[39mread_csv(data_loc [38;5;241m+[39m [38;5;124m"[39m[38;5;124mdatafile.csv[39m[38;5;124m"[39m)
-[1;32m     10[0m display(xydata)
+Cell [0;32mIn[2], line 1[0m
+[0;32m----> 1[0m df [38;5;241m=[39m pd[38;5;241m.[39mread_csv(data_loc [38;5;241m+[39m [38;5;124m"[39m[38;5;124mE2_dataA.csv[39m[38;5;124m"[39m, delimiter [38;5;241m=[39m [38;5;124m"[39m[38;5;124m,[39m[38;5;124m"[39m) [38;5;66;03m# The fields are separated by commas.[39;00m
+[1;32m      2[0m [38;5;28mprint[39m(df)
 
 File [0;32m~/anaconda3/lib/python3.11/site-packages/pandas/util/_decorators.py:211[0m, in [0;36mdeprecate_kwarg.<locals>._deprecate_kwarg.<locals>.wrapper[0;34m(*args, **kwargs)[0m
 [1;32m    209[0m     [38;5;28;01melse[39;00m:
